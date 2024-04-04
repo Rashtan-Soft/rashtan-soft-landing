@@ -1,6 +1,7 @@
 export const metadata = {
-  title: "Home - Open PRO",
-  description: "Page description"
+  title: "Rashtan Soft",
+  description:
+    "Software development agency specializing in C#, React, and Node.js."
 };
 
 import Hero from "@/components/hero";
