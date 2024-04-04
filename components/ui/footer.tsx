@@ -128,7 +128,7 @@ export default function Footer() {
 
             {/* Copyrights note */}
             <div className="text-gray-400 text-sm mr-4">
-              &copy; Rashtan-Soft.com. All rights reserved.
+              &copy; Rashtan-Soft. All rights reserved.
             </div>
           </div>
         </div>
