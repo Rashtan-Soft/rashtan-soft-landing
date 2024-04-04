@@ -51,7 +51,7 @@ export default function Footer() {
 
               {/* 3rd block */}
               <div className="text-sm">
-                <h6 className="text-gray-200 font-medium mb-1">Serices</h6>
+                <h6 className="text-gray-200 font-medium mb-1">Services</h6>
                 <ul>
                   <li className="mb-1">
                     <Link
