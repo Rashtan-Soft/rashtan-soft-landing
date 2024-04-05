@@ -31,7 +31,7 @@ export default function Testimonials() {
                 <div className="relative inline-flex flex-col mb-4">
                   <Image
                     className="rounded-full"
-                    src={TestimonialImage01}
+                    src={TestimonialImage03}
                     width={48}
                     height={48}
                     alt="Testimonial 01"
@@ -116,7 +116,7 @@ export default function Testimonials() {
                 <div className="relative inline-flex flex-col mb-4">
                   <Image
                     className="rounded-full"
-                    src={TestimonialImage03}
+                    src={TestimonialImage01}
                     width={48}
                     height={48}
                     alt="Testimonial 03"
