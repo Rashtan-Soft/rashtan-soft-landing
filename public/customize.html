@@ -773,6 +773,29 @@
 
     <!-- CTA Section -->
     <section id="contact" class="py-16 bg-blue-600">
+        <script>
+            function contactFormSubmit(e) {
+                e.preventDefault();
+                const labSize = document.getElementById("lab-size").value;
+                const data = {
+                    phone: document.getElementById("name").value,
+                    email: document.getElementById("email").value,
+                    message: `${labSize}\n\n${document.getElementById("message").value}`,
+                };
+                fetch("https://api.dentallabguru.com/contact", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(data)
+                }).then(res => {
+                    console.log("response:", res);
+                    alert(document.getElementById("contact_form").dataset.sentmsg);
+                });
+            }
+
+            document
+                .getElementById("contact_form")
+                .addEventListener("submit", contactFormSubmit);
+        </script>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
                 <div>
@@ -784,7 +807,7 @@
                         lab's efficiency.
                     </p>
                     <div class="mt-8 flex space-x-4">
-                        <a href="https://calendly.com/dentallab-os/demo" target="_blank"
+                        <a href="https://calendly.com/admin-rashtan-soft/30min" target="_blank"
                             class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-blue-600 bg-white hover:bg-blue-50 transition-colors">
                             <svg class="mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -805,7 +828,8 @@
                 </div>
                 <div class="mt-12 lg:mt-0">
                     <div class="bg-white py-8 px-6 shadow rounded-lg sm:px-10">
-                        <form class="mb-0 space-y-6">
+                        <form id="contact_form" data-sentmsg="Message sent! We will contact you shortly!"
+                            class="mb-0 space-y-6">
                             <div>
                                 <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
                                 <div class="mt-1">
