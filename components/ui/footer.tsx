@@ -40,6 +40,14 @@ export default function Footer() {
                 <ul>
                   <li className="mb-1">
                     <Link
+                      href="https://www.dentallabguru.com//"
+                      className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out"
+                    >
+                      Dental Lab Guru
+                    </Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link
                       href="https://app.zubnatehnika.org/"
                       className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out"
                     >
@@ -121,6 +129,21 @@ export default function Footer() {
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path d="M23.3 8H8.7c-.4 0-.7.3-.7.7v14.7c0 .3.3.6.7.6h14.7c.4 0 .7-.3.7-.7V8.7c-.1-.4-.4-.7-.8-.7zM12.7 21.6h-2.3V14h2.4v7.6h-.1zM11.6 13c-.8 0-1.4-.7-1.4-1.4 0-.8.6-1.4 1.4-1.4.8 0 1.4.6 1.4 1.4-.1.7-.7 1.4-1.4 1.4zm10 8.6h-2.4v-3.7c0-.9 0-2-1.2-2s-1.4 1-1.4 2v3.8h-2.4V14h2.3v1c.3-.6 1.1-1.2 2.2-1.2 2.4 0 2.8 1.6 2.8 3.6v4.2h.1z" />
+                  </svg>
+                </Link>
+              </li>
+              <li className="ml-4">
+                <Link
+                  href="https://www.toptal.com/developers/resume/gavrilo-mumovic#qK3P5E"
+                  className="flex justify-center items-center text-purple-600 bg-gray-800 hover:text-gray-100 hover:bg-purple-600 rounded-full transition duration-150 ease-in-out"
+                  aria-label="Hire me on Toptal"
+                >
+                  <svg
+                    className="w-8 h-8 fill-current p-1"
+                    viewBox="0 0 24 32"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M8.11 0L14.82 6.7C14.87 6.75 14.91 6.8 14.97 6.85L20.82 12.7L11.31 22.16L15.66 26.52L12.75 29.41L6.09 22.75C6.01 22.68 5.93 22.6 5.85 22.52L0 16.68L9.48 7.25L5.16 2.94L8.11 0ZM12.36 10.5C12.27 10.48 12.18 10.48 12.1 10.5C12.01 10.53 11.94 10.57 11.78 10.72L6.37 16.11C6.21 16.27 6.17 16.34 6.15 16.42C6.12 16.51 6.12 16.6 6.15 16.68C6.17 16.77 6.22 16.85 6.37 17L8.09 18.72C8.24 18.87 8.31 18.91 8.4 18.94C8.49 18.96 8.57 18.96 8.66 18.94C8.75 18.91 8.82 18.87 8.97 18.72L14.38 13.33C14.54 13.18 14.58 13.1 14.61 13.02C14.63 12.93 14.63 12.85 14.61 12.76C14.59 12.67 14.54 12.6 14.39 12.45L12.67 10.73C12.52 10.57 12.44 10.53 12.36 10.5Z" />
                   </svg>
                 </Link>
               </li>

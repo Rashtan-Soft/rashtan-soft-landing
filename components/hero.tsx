@@ -1,5 +1,6 @@
 import VideoThumb from "@/public/images/hero-image-01.jpg";
 import ModalVideo from "@/components/modal-video";
+import ToptalBadge from "@/components/toptal-badge";
 
 export default function Hero() {
   return (
@@ -59,6 +60,15 @@ export default function Hero() {
               pioneering innovative products to set your business apart in the
               digital world.
             </p>
+
+            {/* Toptal Badge */}
+            <div
+              className="flex justify-center mb-8"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <ToptalBadge />
+            </div>
           </div>
 
           <ModalVideo
