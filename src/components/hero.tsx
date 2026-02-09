@@ -1,6 +1,5 @@
-import VideoThumb from "@/public/images/hero-image-01.jpg";
-import ModalVideo from "@/components/modal-video";
-import ToptalBadge from "@/components/toptal-badge";
+import ModalVideo from './modal-video'
+import ToptalBadge from './toptal-badge'
 
 export default function Hero() {
   return (
@@ -72,7 +71,7 @@ export default function Hero() {
           </div>
 
           <ModalVideo
-            thumb={VideoThumb}
+            thumb="/images/hero-image-01.jpg"
             thumbWidth={1024}
             thumbHeight={576}
             thumbAlt="Modal video thumbnail"
@@ -83,5 +82,5 @@ export default function Hero() {
         </div>
       </div>
     </section>
-  );
+  )
 }

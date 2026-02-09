@@ -1,7 +1,3 @@
-import Image from "next/image";
-
-import FeatImage03 from "@/public/images/features-03-image-03.png";
-
 export default function Zigzag() {
   return (
     <section>
@@ -27,9 +23,9 @@ export default function Zigzag() {
                 className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 md:order-1"
                 data-aos="fade-up"
               >
-                <Image
+                <img
                   className="max-w-full mx-auto md:max-w-none h-auto"
-                  src={FeatImage03}
+                  src="/images/features-03-image-03.png"
                   width={540}
                   height={405}
                   alt="Features 01"
@@ -92,5 +88,5 @@ export default function Zigzag() {
         </div>
       </div>
     </section>
-  );
+  )
 }

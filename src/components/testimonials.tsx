@@ -1,9 +1,3 @@
-import Image from "next/image";
-
-import TestimonialImage01 from "@/public/images/testimonial-01.jpg";
-import TestimonialImage02 from "@/public/images/testimonial-02.jpg";
-import TestimonialImage03 from "@/public/images/testimonial-03.jpg";
-
 export default function Testimonials() {
   return (
     <section>
@@ -29,9 +23,9 @@ export default function Testimonials() {
             >
               <div>
                 <div className="relative inline-flex flex-col mb-4">
-                  <Image
+                  <img
                     className="rounded-full"
-                    src={TestimonialImage03}
+                    src="/images/testimonial-03.jpg"
                     width={48}
                     height={48}
                     alt="Testimonial 01"
@@ -70,9 +64,9 @@ export default function Testimonials() {
             >
               <div>
                 <div className="relative inline-flex flex-col mb-4">
-                  <Image
+                  <img
                     className="rounded-full"
-                    src={TestimonialImage02}
+                    src="/images/testimonial-02.jpg"
                     width={48}
                     height={48}
                     alt="Testimonial 02"
@@ -114,9 +108,9 @@ export default function Testimonials() {
             >
               <div>
                 <div className="relative inline-flex flex-col mb-4">
-                  <Image
+                  <img
                     className="rounded-full"
-                    src={TestimonialImage01}
+                    src="/images/testimonial-01.jpg"
                     width={48}
                     height={48}
                     alt="Testimonial 03"
@@ -152,5 +146,5 @@ export default function Testimonials() {
         </div>
       </div>
     </section>
-  );
+  )
 }

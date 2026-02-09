@@ -1,8 +1,3 @@
-import Link from "next/link";
-import Image from "next/image";
-
-import LogoImage from "@/public/images/logo-dark.png";
-
 export default function Header() {
   return (
     <header className="absolute w-full z-30">
@@ -11,18 +6,18 @@ export default function Header() {
           {/* Site branding */}
           <div className="shrink-0 mr-4">
             {/* Logo */}
-            <Link href="/" className="block" aria-label="Cruip">
-              <Image
+            <a href="/" className="block" aria-label="Rashtan Soft">
+              <img
                 className="rounded-full"
-                src={LogoImage}
+                src="/images/logo-dark.png"
                 width={96}
                 height={96}
                 alt="Rashtan Soft"
               />
-            </Link>
+            </a>
           </div>
         </div>
       </div>
     </header>
-  );
+  )
 }
