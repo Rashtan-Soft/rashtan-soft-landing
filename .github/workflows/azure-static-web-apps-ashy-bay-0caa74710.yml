@@ -17,14 +17,6 @@ jobs:
         with:
           submodules: true
           lfs: false
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 18
-
-      - name: Check Node.js and npm versions
-        run: |
-          node -v
-          npm -v
 
       - name: Build And Deploy
         id: builddeploy
@@ -37,5 +29,6 @@ jobs:
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
           app_location: "/" # App source code path
           api_location: "" # Api source code path - optional
-          output_location: "dist" # Built app content directory - optional
+          output_location: "" # No build step needed - serve from root
+          skip_app_build: true
           ###### End of Repository/Build Configurations ######
