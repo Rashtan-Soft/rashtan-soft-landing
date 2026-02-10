@@ -4,9 +4,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rashtan Soft — Transforming Visions into Reality</title>
+  <title>Rashtan Soft — Senior C#, React & Node.js Development | Top 3% Toptal Developer</title>
   <meta name="description"
-    content="Specializing in C#, React, and Node.js, Rashtan Soft crafts custom solutions and pioneering innovative products to set your business apart." />
+    content="Expert software development services specializing in C#/.NET, React, and Node.js. Top 3% Toptal verified developer with 10+ years experience. Serving clients worldwide with enterprise-grade solutions." />
+  <meta name="keywords"
+    content="C# developer, .NET developer, React developer, Node.js developer, software development, Toptal developer, remote developer, full-stack developer, Azure, AWS" />
+  <meta name="author" content="Gavrilo Mumovic" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.rashtan-soft.com/" />
+  <meta property="og:title" content="Rashtan Soft — Senior C#, React & Node.js Development" />
+  <meta property="og:description"
+    content="Expert software development services specializing in C#/.NET, React, and Node.js. Top 3% Toptal verified developer with 10+ years experience." />
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://www.rashtan-soft.com/" />
+  <meta property="twitter:title" content="Rashtan Soft — Senior C#, React & Node.js Development" />
+  <meta property="twitter:description"
+    content="Expert software development services specializing in C#/.NET, React, and Node.js. Top 3% Toptal verified developer with 10+ years experience." />
+  <link rel="canonical" href="https://www.rashtan-soft.com/" />
   <link rel="icon" href="favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,7 +34,7 @@
       theme: {
         extend: {
           colors: {
-            gray: { 100: '#EBF1F5', 200: '#D9E3EA', 300: '#C5D2DC', 400: '#9BA9B4', 500: '#707D86', 600: '#55595F', 700: '#33363A', 800: '#25282C', 900: '#151719' },
+            gray: { 100: '#EBF1F5', 200: '#D9E3EA', 300: '#C5D2DC', 400: '#9BA9B4', 500: '#707D86', 600: '#55595F', 700: '#33363A', 800: '#25282C', 900: '#151719', 950: '#0d0e10' },
             purple: { 100: '#F4F4FF', 200: '#E2E1FF', 300: '#CBCCFF', 400: '#ABABFF', 500: '#8D8DFF', 600: '#5D5DFF', 700: '#4B4ACF', 800: '#38379C', 900: '#262668' }
           },
           fontFamily: { inter: ['Inter', 'sans-serif'], 'architects-daughter': ['Architects Daughter', 'sans-serif'] },
@@ -35,7 +49,6 @@
       font-family: 'Inter', sans-serif;
     }
 
-    /* Typography */
     .h1 {
       font-size: 2.5rem;
       font-weight: 800;
@@ -73,7 +86,6 @@
       }
     }
 
-    /* Toptal Badge */
     @import url("https://use.typekit.net/kmj5qkr.css");
 
     .toptal-badge {
@@ -139,7 +151,6 @@
       background: #1c56d6;
     }
 
-    /* Video Modal */
     .video-modal-backdrop {
       position: fixed;
       inset: 0;
@@ -175,36 +186,68 @@
       transform: scale(1);
       pointer-events: auto;
     }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .3s ease;
+    }
+
+    .faq-answer.open {
+      max-height: 500px;
+    }
   </style>
 </head>
 
 <body class="font-inter antialiased bg-gray-900 text-gray-200 tracking-tight">
   <div class="flex flex-col min-h-screen overflow-hidden">
 
-    <!-- ========== HEADER ========== -->
-    <header class="absolute w-full z-30">
+    <!-- ========== STICKY NAVIGATION ========== -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="flex items-center justify-between h-20">
-          <div class="shrink-0 mr-4">
-            <a href="/" class="block" aria-label="Rashtan Soft">
-              <img class="rounded-full" src="images/logo-dark.png" width="96" height="96" alt="Rashtan Soft" />
-            </a>
+        <div class="flex justify-between items-center h-16">
+          <a href="#home" class="flex items-center shrink-0">
+            <img class="rounded-full" src="images/logo-dark.png" width="40" height="40" alt="Rashtan Soft" />
+            <span class="ml-2 text-lg font-bold text-white">Rashtan Soft</span>
+          </a>
+          <div class="hidden md:flex space-x-8">
+            <a href="#about" class="text-gray-300 hover:text-white transition-colors">About</a>
+            <a href="#services" class="text-gray-300 hover:text-white transition-colors">Services</a>
+            <a href="#portfolio" class="text-gray-300 hover:text-white transition-colors">Portfolio</a>
+            <a href="#testimonials" class="text-gray-300 hover:text-white transition-colors">Testimonials</a>
+            <a href="#contact" class="text-gray-300 hover:text-white transition-colors">Contact</a>
           </div>
+          <div class="hidden md:block">
+            <a href="#contact"
+              class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg transition-colors text-sm font-semibold">Get
+              Started</a>
+          </div>
+          <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-white" aria-label="Toggle menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
         </div>
       </div>
-    </header>
+      <div id="mobile-menu" class="hidden md:hidden bg-gray-800 border-t border-gray-700">
+        <div class="px-4 py-4 space-y-3">
+          <a href="#about" class="block text-gray-300 hover:text-white transition-colors">About</a>
+          <a href="#services" class="block text-gray-300 hover:text-white transition-colors">Services</a>
+          <a href="#portfolio" class="block text-gray-300 hover:text-white transition-colors">Portfolio</a>
+          <a href="#testimonials" class="block text-gray-300 hover:text-white transition-colors">Testimonials</a>
+          <a href="#contact" class="block text-gray-300 hover:text-white transition-colors">Contact</a>
+          <a href="#contact"
+            class="block bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg text-center transition-colors font-semibold">Get
+            Started</a>
+        </div>
+      </div>
+    </nav>
 
     <main class="grow">
 
-      <!-- ========== PAGE ILLUSTRATION ========== -->
-      <!-- PAGE_ILLUSTRATION_PLACEHOLDER -->
-
       <!-- ========== HERO ========== -->
-      <section>
+      <section id="home">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 relative">
-          <!-- Hero illustration -->
-          <!-- HERO_ILLUSTRATION_PLACEHOLDER -->
-
           <div class="relative pt-32 pb-10 md:pt-28 md:pb-16">
             <div class="max-w-3xl mx-auto text-center pb-12 md:pb-16">
               <h1 class="h1 mb-4" data-aos="fade-up">Transforming Visions into Reality with Cutting-Edge Tech</h1>
@@ -233,10 +276,16 @@
                           fill="#262d3d" />
                       </svg>
                       <a class="badge-cta" href="https://www.toptal.com/developers/resume/gavrilo-mumovic#qK3P5E"
-                        target="_blank" rel="noopener noreferrer">Hire me</a>
+                        target="_blank" rel="noopener noreferrer">Hire Me on Toptal</a>
                     </div>
                   </div>
                 </div>
+              </div>
+              <!-- Secondary CTA -->
+              <div class="flex justify-center" data-aos="fade-up" data-aos-delay="400">
+                <a href="#contact"
+                  class="border-2 border-gray-400 hover:bg-white hover:text-gray-900 text-gray-200 px-8 py-3 rounded-lg font-semibold transition-colors inline-block">Schedule
+                  Consultation</a>
               </div>
             </div>
 
@@ -260,9 +309,7 @@
                 </button>
               </div>
             </div>
-            <!-- Video Modal Backdrop -->
             <div id="videoBackdrop" class="video-modal-backdrop" onclick="closeVideoModal()"></div>
-            <!-- Video Modal -->
             <div id="videoContainer" class="video-modal-container" onclick="closeVideoModal()">
               <div class="max-w-6xl mx-auto h-full flex items-center" onclick="event.stopPropagation()">
                 <div class="w-full max-h-full aspect-video bg-black overflow-hidden">
@@ -277,21 +324,87 @@
         </div>
       </section>
 
-      <!-- ========== FEATURES ========== -->
-      <section>
+      <!-- ========== ABOUT ========== -->
+      <section id="about" class="py-12 md:py-20 border-t border-gray-800">
         <div class="max-w-6xl mx-auto px-4 sm:px-6">
-          <div class="py-12 md:py-20">
+          <div class="md:grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+              <div class="bg-gray-800 rounded-lg p-8 border border-gray-700">
+                <h3 class="text-3xl font-bold text-white mb-2">Gavrilo Mumovic</h3>
+                <p class="text-xl text-purple-400 mb-6">Founder &amp; Lead Software Engineer</p>
+                <div class="grid grid-cols-2 gap-6 mb-8">
+                  <div class="text-center">
+                    <div class="text-4xl font-bold text-purple-500">10+</div>
+                    <div class="text-gray-400 mt-2">Years Experience</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-4xl font-bold text-purple-500">5+</div>
+                    <div class="text-gray-400 mt-2">Countries Served</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-4xl font-bold text-purple-500">Top 3%</div>
+                    <div class="text-gray-400 mt-2">Toptal Talent</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-4xl font-bold text-purple-500">100%</div>
+                    <div class="text-gray-400 mt-2">Client Satisfaction</div>
+                  </div>
+                </div>
+                <div class="flex space-x-4">
+                  <a href="https://www.linkedin.com/in/gavrilo-mumovic/" target="_blank"
+                    class="text-gray-400 hover:text-purple-500 transition-colors" aria-label="LinkedIn"><svg
+                      class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path
+                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg></a>
+                  <a href="https://github.com/gajo357" target="_blank"
+                    class="text-gray-400 hover:text-purple-500 transition-colors" aria-label="GitHub"><svg
+                      class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg></a>
+                  <a href="https://www.toptal.com/developers/resume/gavrilo-mumovic" target="_blank"
+                    class="text-gray-400 hover:text-purple-500 transition-colors" aria-label="Toptal"><svg
+                      class="w-6 h-6 fill-current" viewBox="0 0 24 32">
+                      <path
+                        d="M8.11 0L14.82 6.7C14.87 6.75 14.91 6.8 14.97 6.85L20.82 12.7L11.31 22.16L15.66 26.52L12.75 29.41L6.09 22.75C6.01 22.68 5.93 22.6 5.85 22.52L0 16.68L9.48 7.25L5.16 2.94L8.11 0ZM12.36 10.5C12.27 10.48 12.18 10.48 12.1 10.5C12.01 10.53 11.94 10.57 11.78 10.72L6.37 16.11C6.21 16.27 6.17 16.34 6.15 16.42C6.12 16.51 6.12 16.6 6.15 16.68C6.17 16.77 6.22 16.85 6.37 17L8.09 18.72C8.24 18.87 8.31 18.91 8.4 18.94C8.49 18.96 8.57 18.96 8.66 18.94C8.75 18.91 8.82 18.87 8.97 18.72L14.38 13.33C14.54 13.18 14.58 13.1 14.61 13.02C14.63 12.93 14.63 12.85 14.61 12.76C14.59 12.67 14.54 12.6 14.39 12.45L12.67 10.73C12.52 10.57 12.44 10.53 12.36 10.5Z" />
+                    </svg></a>
+                </div>
+              </div>
+            </div>
+            <div data-aos="fade-left">
+              <h2 class="h2 mb-6">About Rashtan Soft</h2>
+              <div class="space-y-4 text-gray-400 text-lg">
+                <p>Founded by Gavrilo Mumovic, a senior software engineer with over 10 years of experience, Rashtan Soft
+                  delivers enterprise-grade software solutions with a boutique approach. As a verified Top 3% Toptal
+                  developer, I bring the expertise of a large agency with the personal attention and flexibility of
+                  working directly with the founder.</p>
+                <p>My journey in software engineering spans from building complex industrial systems at Calsep A/S to
+                  architecting game infrastructure at Illuvium, with successful projects for companies like StubHub and
+                  healthcare platforms.</p>
+                <p>Whether you need a robust back-end system, a modern web application, or cloud infrastructure that
+                  scales, you get direct access to senior-level expertise without the overhead of a large agency.</p>
+              </div>
+              <div class="mt-8"><a href="#contact"
+                  class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors inline-block">Let's
+                  Discuss Your Project</a></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== SERVICES ========== -->
+      <section id="services">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+          <div class="py-12 md:py-20 border-t border-gray-800">
             <div class="max-w-3xl mx-auto text-center pb-12 md:pb-20">
               <h2 class="h2 mb-4">Empowering Innovation with Our Core Capabilities</h2>
               <p class="text-xl text-gray-400">At the heart of our agency lies a commitment to not just meet, but exceed
-                the technological frontier. With a deep dive into C#, React, and Node.js, we've honed our skills to
-                offer you a suite of features designed to transform your digital presence and streamline your
-                operations. Here's how we stand out.</p>
+                the technological frontier. Here's how we stand out.</p>
             </div>
             <div
               class="max-w-sm mx-auto grid gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-16 items-start md:max-w-2xl lg:max-w-none"
               data-aos-id-blocks>
-              <!-- 1st -->
               <div class="relative flex flex-col items-center" data-aos="fade-up"
                 data-aos-anchor="[data-aos-id-blocks]">
                 <svg class="w-16 h-16 mb-4" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
@@ -304,10 +417,10 @@
                 </svg>
                 <h4 class="h4 mb-2">Mastering Complexity with C#</h4>
                 <p class="text-lg text-gray-400 text-center">Harness the power of C# for enterprise-grade software
-                  solutions. Our expertise spans sophisticated systems that require deep logic and high performance,
-                  ensuring your backend is robust and reliable.</p>
+                  solutions with 14 years of proven expertise. From AWS Lambda serverless architectures to complex
+                  desktop applications, I build sophisticated systems that handle deep business logic and
+                  high-performance requirements.</p>
               </div>
-              <!-- 2nd -->
               <div class="relative flex flex-col items-center" data-aos="fade-up" data-aos-delay="100"
                 data-aos-anchor="[data-aos-id-blocks]">
                 <svg class="w-16 h-16 mb-4" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
@@ -317,12 +430,12 @@
                   <path class="stroke-current text-purple-300" d="M26 28h12M26 32h12M26 36h5" stroke-width="2"
                     stroke-linecap="square" />
                 </svg>
-                <h4 class="h4 mb-2">Dynamic, User-Centric Interfaces with React</h4>
-                <p class="text-lg text-gray-400 text-center">Elevate the user experience with React's responsive and
-                  interactive UIs. We create intuitive, visually appealing applications that keep your users engaged and
-                  satisfied.</p>
+                <h4 class="h4 mb-2">Dynamic Interfaces with React</h4>
+                <p class="text-lg text-gray-400 text-center">Elevate the user experience with React and TypeScript to
+                  create responsive, interactive interfaces that users love. With 6 years of React expertise, I build
+                  progressive web applications and modern SPAs that combine beautiful design with optimal performance.
+                </p>
               </div>
-              <!-- 3rd -->
               <div class="relative flex flex-col items-center" data-aos="fade-up" data-aos-delay="200"
                 data-aos-anchor="[data-aos-id-blocks]">
                 <svg class="w-16 h-16 mb-4" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
@@ -336,10 +449,9 @@
                 </svg>
                 <h4 class="h4 mb-2">Efficiency at Scale with Node.js</h4>
                 <p class="text-lg text-gray-400 text-center">Leverage Node.js for lightweight, scalable network
-                  applications. Our Node.js solutions are built for high throughput and real-time data processing, ideal
-                  for web applications and microservices architectures.</p>
+                  applications and microservices. I build REST APIs, real-time systems with WebSockets, and serverless
+                  functions that handle high throughput and concurrent connections efficiently.</p>
               </div>
-              <!-- 4th -->
               <div class="relative flex flex-col items-center" data-aos="fade-up" data-aos-delay="300"
                 data-aos-anchor="[data-aos-id-blocks]">
                 <svg class="w-16 h-16 mb-4" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
@@ -352,11 +464,10 @@
                   </g>
                 </svg>
                 <h4 class="h4 mb-2">Flexibility and Speed with Agile</h4>
-                <p class="text-lg text-gray-400 text-center">Adopting an Agile approach, we ensure that our projects
-                  remain flexible to change, iterative for rapid delivery, and aligned with your goals for timely and
-                  efficient completion.</p>
+                <p class="text-lg text-gray-400 text-center">Adopting an Agile approach with clear communication and
+                  iterative delivery, your project stays flexible to changing requirements while maintaining momentum.
+                  Projects are delivered in sprints, allowing you to see progress weekly.</p>
               </div>
-              <!-- 5th -->
               <div class="relative flex flex-col items-center" data-aos="fade-up" data-aos-delay="400"
                 data-aos-anchor="[data-aos-id-blocks]">
                 <svg class="w-16 h-16 mb-4" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
@@ -367,12 +478,11 @@
                     <path class="stroke-current text-purple-300" d="M22 30h4v12h-4z" />
                   </g>
                 </svg>
-                <h4 class="h4 mb-2">Tailor-Made Solutions from Concept to Launch</h4>
-                <p class="text-lg text-gray-400 text-center">From the initial ideation to the final deployment, we offer
-                  comprehensive custom development services. Our approach is to understand your vision deeply and
-                  translate it into software that adds real value.</p>
+                <h4 class="h4 mb-2">Tailor-Made Solutions</h4>
+                <p class="text-lg text-gray-400 text-center">From initial consultation to production deployment and
+                  beyond, I provide end-to-end custom development services. You receive a complete solution including
+                  documentation, CI/CD pipelines, and post-launch support.</p>
               </div>
-              <!-- 6th -->
               <div class="relative flex flex-col items-center" data-aos="fade-up" data-aos-delay="500"
                 data-aos-anchor="[data-aos-id-blocks]">
                 <svg class="w-16 h-16 mb-4" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
@@ -386,12 +496,138 @@
                       d="M8.86 1.18C3.8 1.988 0 5.6 0 10c0 5 4.9 9 11 9a10.55 10.55 0 003.1-.4L20 21l-.6-5.2a9.125 9.125 0 001.991-2.948" />
                   </g>
                 </svg>
-                <h4 class="h4 mb-2">Driving Future Trends with Our Products</h4>
-                <p class="text-lg text-gray-400 text-center">Beyond client projects, we invest in developing our own
-                  suite of innovative products. These ventures allow us to explore cutting-edge technologies and
-                  methodologies, which we then bring into client projects for that competitive edge.</p>
+                <h4 class="h4 mb-2">Driving Future Trends</h4>
+                <p class="text-lg text-gray-400 text-center">Beyond client work, I develop and maintain production
+                  software products serving users across multiple countries. The experience from managing complete
+                  product lifecycles translates directly into better client solutions.</p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== PORTFOLIO ========== -->
+      <section id="portfolio" class="border-t border-gray-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+          <div class="py-12 md:py-20">
+            <div class="max-w-3xl mx-auto text-center pb-12 md:pb-16">
+              <h2 class="h2 mb-4">Featured Projects</h2>
+              <p class="text-xl text-gray-400">Real-world solutions delivering measurable results</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="fade-up">
+              <!-- Dental Lab Guru -->
+              <div
+                class="bg-gray-800 rounded-lg overflow-hidden border border-gray-700 hover:border-purple-500 transition-colors p-6">
+                <h3 class="text-xl font-bold text-white mb-3">Dental Lab Guru</h3>
+                <p class="text-gray-400 mb-4 text-sm">Comprehensive dental laboratory management system serving
+                  laboratories across 5+ countries.</p>
+                <ul class="text-sm text-gray-400 space-y-1 mb-4">
+                  <li>• Used by labs in 5+ countries</li>
+                  <li>• Real-time SMS &amp; email notifications</li>
+                  <li>• Stripe &amp; PayPal payments</li>
+                  <li>• Multi-language support</li>
+                </ul>
+                <div class="flex flex-wrap gap-2"><span
+                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">React</span><span
+                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">.NET Core</span><span
+                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">Azure</span><span
+                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">Docker</span></div>
+              </div>
+              <!-- Illuvium -->
+              <div
+                class="bg-gray-800 rounded-lg overflow-hidden border border-gray-700 hover:border-purple-500 transition-colors p-6">
+                <h3 class="text-xl font-bold text-white mb-3">Illuvium Infrastructure</h3>
+                <p class="text-gray-400 mb-4 text-sm">Architected complete back-end infrastructure for flagship game
+                  titles, handling thousands of concurrent users.</p>
+                <ul class="text-sm text-gray-400 space-y-1 mb-4">
+                  <li>• Built from ground up on AWS Lambda</li>
+                  <li>• Upgraded to .NET 9 for performance</li>
+                  <li>• Reduced cold start times significantly</li>
+                  <li>• Designed MMO game services</li>
+                </ul>
+                <div class="flex flex-wrap gap-2"><span
+                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">C#</span><span
+                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">AWS Lambda</span><span
+                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">.NET 9</span><span
+                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">Terraform</span></div>
+              </div>
+              <!-- MedProctor -->
+              <div
+                class="bg-gray-800 rounded-lg overflow-hidden border border-gray-700 hover:border-purple-500 transition-colors p-6">
+                <h3 class="text-xl font-bold text-white mb-3">MedProctor Optimization</h3>
+                <p class="text-gray-400 mb-4 text-sm">Performance optimization for healthcare platform, dramatically
+                  reducing processing times.</p>
+                <ul class="text-sm text-gray-400 space-y-1 mb-4">
+                  <li>• 5 hours → 20 seconds (99.9% faster)</li>
+                  <li>• Fixed SQL Server bottleneck</li>
+                  <li>• 60% faster EF queries</li>
+                  <li>• Bulk insert strategies</li>
+                </ul>
+                <div class="flex flex-wrap gap-2"><span
+                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">C#</span><span
+                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">SQL Server</span><span
+                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">AWS Lambda</span><span
+                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">EF Core</span></div>
+              </div>
+              <!-- StubHub -->
+              <div
+                class="bg-gray-800 rounded-lg overflow-hidden border border-gray-700 hover:border-purple-500 transition-colors p-6">
+                <h3 class="text-xl font-bold text-white mb-3">StubHub Payments</h3>
+                <p class="text-gray-400 mb-4 text-sm">Developed payment processing features for StubHub's ticketing
+                  platform, increasing conversion rates.</p>
+                <ul class="text-sm text-gray-400 space-y-1 mb-4">
+                  <li>• Increased large order processing by 2%</li>
+                  <li>• Led team of 2 engineers</li>
+                  <li>• Improved revenue and conversion</li>
+                  <li>• Mentored junior developers</li>
+                </ul>
+                <div class="flex flex-wrap gap-2"><span
+                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">C#</span><span
+                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">React</span><span
+                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">JavaScript</span><span
+                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">SQL Server</span></div>
+              </div>
+              <!-- PVTsim Nova -->
+              <div
+                class="bg-gray-800 rounded-lg overflow-hidden border border-gray-700 hover:border-purple-500 transition-colors p-6">
+                <h3 class="text-xl font-bold text-white mb-3">PVTsim Nova</h3>
+                <p class="text-gray-400 mb-4 text-sm">Revolutionary oil and gas simulation platform with industry-first
+                  ML-based automated data import.</p>
+                <ul class="text-sm text-gray-400 space-y-1 mb-4">
+                  <li>• First ML-based PVT data import worldwide</li>
+                  <li>• Created new revenue stream</li>
+                  <li>• Built Web API with C# &amp; Python SDKs</li>
+                  <li>• Docker/Kubernetes deployment</li>
+                </ul>
+                <div class="flex flex-wrap gap-2"><span
+                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">C#</span><span
+                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">.NET Core</span><span
+                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">Python</span><span
+                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">ML</span><span
+                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">Docker</span></div>
+              </div>
+              <!-- VLXE SDK -->
+              <div
+                class="bg-gray-800 rounded-lg overflow-hidden border border-gray-700 hover:border-purple-500 transition-colors p-6">
+                <h3 class="text-xl font-bold text-white mb-3">VLXE Multi-Language SDK</h3>
+                <p class="text-gray-400 mb-4 text-sm">Created comprehensive SDK and samples in C#, Python, and
+                  JavaScript for VLXE API.</p>
+                <ul class="text-sm text-gray-400 space-y-1 mb-4">
+                  <li>• SDK in 3 languages (C#, Python, JS)</li>
+                  <li>• Complete UI from Figma design</li>
+                  <li>• Comprehensive code samples</li>
+                  <li>• Blazor &amp; Razor implementation</li>
+                </ul>
+                <div class="flex flex-wrap gap-2"><span
+                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">C#</span><span
+                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">Python</span><span
+                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">JavaScript</span><span
+                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">Blazor</span></div>
+              </div>
+            </div>
+            <div class="text-center mt-12"><a href="#contact"
+                class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors inline-block">Discuss
+                Your Project</a></div>
           </div>
         </div>
       </section>
@@ -413,7 +649,7 @@
                   class="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 md:order-1"
                   data-aos="fade-up">
                   <img class="max-w-full mx-auto md:max-w-none h-auto" src="images/features-03-image-03.png" width="540"
-                    height="405" alt="Features 01" />
+                    height="405" alt="Features" />
                 </div>
                 <div class="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6" data-aos="fade-right">
                   <div class="md:pr-4 lg:pr-12 xl:pr-16">
@@ -421,22 +657,21 @@
                       style="font-family:'Architects Daughter',sans-serif">More speed. Less spend</div>
                     <h3 class="h3 mb-3">Keep projects on schedule</h3>
                     <p class="text-xl text-gray-400 mb-4">Ensuring projects adhere to their timelines is at the core of
-                      our project management philosophy. With a steadfast commitment to efficiency, transparency, and
-                      adaptability, we employ strategic measures to keep every project on track, from kickoff to
-                      delivery. Here's how we guarantee timeliness without compromising on quality:</p>
+                      our project management philosophy. Here's how we guarantee timeliness without compromising on
+                      quality:</p>
                     <ul class="text-lg text-gray-400 -mb-2">
                       <li class="flex items-center mb-2"><svg class="w-3 h-3 fill-current text-green-500 mr-2 shrink-0"
-                          viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                          viewBox="0 0 12 12">
                           <path
                             d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
                         </svg><span>Clear Communication Channels</span></li>
                       <li class="flex items-center mb-2"><svg class="w-3 h-3 fill-current text-green-500 mr-2 shrink-0"
-                          viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                          viewBox="0 0 12 12">
                           <path
                             d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
                         </svg><span>Flexible Agile Methodology</span></li>
                       <li class="flex items-center"><svg class="w-3 h-3 fill-current text-green-500 mr-2 shrink-0"
-                          viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                          viewBox="0 0 12 12">
                           <path
                             d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
                         </svg><span>Continuous Progress Monitoring</span></li>
@@ -450,74 +685,261 @@
       </section>
 
       <!-- ========== TESTIMONIALS ========== -->
-      <section>
+      <section id="testimonials">
         <div class="max-w-6xl mx-auto px-4 sm:px-6">
           <div class="py-12 md:py-20 border-t border-gray-800">
             <div class="max-w-3xl mx-auto text-center pb-12 md:pb-20">
               <h2 class="h2 mb-4">Don't take our word for it</h2>
-              <p class="text-xl text-gray-400">Don't just take our word for it—read what our clients have to say about
-                the transformative impact our services have had on their businesses. Each testimonial stands as a
-                testament to our dedication, skill, and the lasting partnerships we build.</p>
+              <p class="text-xl text-gray-400">Read what our clients have to say about the transformative impact our
+                services have had on their businesses.</p>
             </div>
             <div class="max-w-sm mx-auto grid gap-8 lg:grid-cols-3 lg:gap-6 items-start lg:max-w-none">
-              <!-- 1st testimonial -->
               <div class="flex flex-col h-full p-6 bg-gray-800" data-aos="fade-up">
                 <div>
                   <div class="relative inline-flex flex-col mb-4"><img class="rounded-full"
-                      src="images/testimonial-03.jpg" width="48" height="48" alt="Testimonial 01" /><svg
-                      class="absolute top-0 right-0 -mr-3 w-6 h-5 fill-current text-purple-600" viewBox="0 0 24 20"
-                      xmlns="http://www.w3.org/2000/svg">
+                      src="images/testimonial-03.jpg" width="48" height="48" alt="Igor Sakotic" /><svg
+                      class="absolute top-0 right-0 -mr-3 w-6 h-5 fill-current text-purple-600" viewBox="0 0 24 20">
                       <path
                         d="M0 13.517c0-2.346.611-4.774 1.833-7.283C3.056 3.726 4.733 1.648 6.865 0L11 2.696C9.726 4.393 8.777 6.109 8.152 7.844c-.624 1.735-.936 3.589-.936 5.56v4.644H0v-4.531zm13 0c0-2.346.611-4.774 1.833-7.283 1.223-2.508 2.9-4.586 5.032-6.234L24 2.696c-1.274 1.697-2.223 3.413-2.848 5.148-.624 1.735-.936 3.589-.936 5.56v4.644H13v-4.531z" />
                     </svg></div>
                 </div>
                 <blockquote class="text-lg text-gray-400 grow">— We tasked them with a complex project, and they
                   delivered beyond expectations. Their team's expertise in React and Node.js transformed our operations,
-                  making them more efficient and scalable. We're not just clients; we feel like partners.</blockquote>
+                  making them more efficient and scalable.</blockquote>
                 <div class="text-gray-700 font-medium mt-6 pt-5 border-t border-gray-700"><cite
-                    class="text-gray-200 not-italic">Igor Sakotic</cite> - <a
-                    class="text-purple-600 hover:text-gray-200 transition duration-150 ease-in-out" href="#0">Sakotic
-                    Lab</a></div>
+                    class="text-gray-200 not-italic">Igor Sakotic</cite> - <span class="text-purple-600">Sakotic
+                    Lab</span></div>
               </div>
-              <!-- 2nd testimonial -->
               <div class="flex flex-col h-full p-6 bg-gray-800" data-aos="fade-up" data-aos-delay="200">
                 <div>
                   <div class="relative inline-flex flex-col mb-4"><img class="rounded-full"
-                      src="images/testimonial-02.jpg" width="48" height="48" alt="Testimonial 02" /><svg
-                      class="absolute top-0 right-0 -mr-3 w-6 h-5 fill-current text-purple-600" viewBox="0 0 24 20"
-                      xmlns="http://www.w3.org/2000/svg">
+                      src="images/testimonial-02.jpg" width="48" height="48" alt="Dr. Torben Laursen" /><svg
+                      class="absolute top-0 right-0 -mr-3 w-6 h-5 fill-current text-purple-600" viewBox="0 0 24 20">
                       <path
                         d="M0 13.517c0-2.346.611-4.774 1.833-7.283C3.056 3.726 4.733 1.648 6.865 0L11 2.696C9.726 4.393 8.777 6.109 8.152 7.844c-.624 1.735-.936 3.589-.936 5.56v4.644H0v-4.531zm13 0c0-2.346.611-4.774 1.833-7.283 1.223-2.508 2.9-4.586 5.032-6.234L24 2.696c-1.274 1.697-2.223 3.413-2.848 5.148-.624 1.735-.936 3.589-.936 5.56v4.644H13v-4.531z" />
                     </svg></div>
                 </div>
                 <blockquote class="text-lg text-gray-400 grow">— From our first consultation, it was clear that they
                   were fully committed to understanding our unique needs. The custom C# solution they developed has
-                  become the backbone of our business operations. Their service is truly unlimited in its potential.
-                </blockquote>
+                  become the backbone of our business operations.</blockquote>
                 <div class="text-gray-700 font-medium mt-6 pt-5 border-t border-gray-700"><cite
-                    class="text-gray-200 not-italic">Dr. Torben Laursen</cite> - <a
-                    class="text-purple-600 hover:text-gray-200 transition duration-150 ease-in-out" href="#0">VLXE
-                    AS</a></div>
+                    class="text-gray-200 not-italic">Dr. Torben Laursen</cite> - <span class="text-purple-600">VLXE
+                    AS</span></div>
               </div>
-              <!-- 3rd testimonial -->
               <div class="flex flex-col h-full p-6 bg-gray-800" data-aos="fade-up" data-aos-delay="400">
                 <div>
                   <div class="relative inline-flex flex-col mb-4"><img class="rounded-full"
-                      src="images/testimonial-01.jpg" width="48" height="48" alt="Testimonial 03" /><svg
-                      class="absolute top-0 right-0 -mr-3 w-6 h-5 fill-current text-purple-600" viewBox="0 0 24 20"
-                      xmlns="http://www.w3.org/2000/svg">
+                      src="images/testimonial-01.jpg" width="48" height="48" alt="Mika Andjelic" /><svg
+                      class="absolute top-0 right-0 -mr-3 w-6 h-5 fill-current text-purple-600" viewBox="0 0 24 20">
                       <path
                         d="M0 13.517c0-2.346.611-4.774 1.833-7.283C3.056 3.726 4.733 1.648 6.865 0L11 2.696C9.726 4.393 8.777 6.109 8.152 7.844c-.624 1.735-.936 3.589-.936 5.56v4.644H0v-4.531zm13 0c0-2.346.611-4.774 1.833-7.283 1.223-2.508 2.9-4.586 5.032-6.234L24 2.696c-1.274 1.697-2.223 3.413-2.848 5.148-.624 1.735-.936 3.589-.936 5.56v4.644H13v-4.531z" />
                     </svg></div>
                 </div>
                 <blockquote class="text-lg text-gray-400 grow">— Their Agile approach made all the difference in our
                   project's success. We were kept in the loop at every stage, with flexibility that allowed for
-                  real-time adjustments. The result? A product that perfectly matched our vision, delivered on schedule.
-                </blockquote>
+                  real-time adjustments. The result? A product that perfectly matched our vision.</blockquote>
                 <div class="text-gray-700 font-medium mt-6 pt-5 border-t border-gray-700"><cite
-                    class="text-gray-200 not-italic">Mika Andjelic</cite> - <a
-                    class="text-purple-600 hover:text-gray-200 transition duration-150 ease-in-out" href="#0">Andjelic
-                    Vinery</a></div>
+                    class="text-gray-200 not-italic">Mika Andjelic</cite> - <span class="text-purple-600">Andjelic
+                    Vinery</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== FAQ ========== -->
+      <section class="border-t border-gray-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+          <div class="py-12 md:py-20">
+            <div class="max-w-3xl mx-auto text-center pb-12 md:pb-16">
+              <h2 class="h2 mb-4">Frequently Asked Questions</h2>
+              <p class="text-xl text-gray-400">Everything you need to know about working with Rashtan Soft</p>
+            </div>
+            <div class="space-y-4" data-aos="fade-up">
+              <div class="bg-gray-800 border border-gray-700 rounded-lg"><button
+                  class="faq-toggle w-full text-left p-6 flex justify-between items-center"><span
+                    class="text-lg font-semibold text-white">What is your development process?</span><svg
+                    class="w-5 h-5 text-gray-400 shrink-0 ml-4 transition-transform" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg></button>
+                <div class="faq-answer">
+                  <p class="px-6 pb-6 text-gray-400">I follow an Agile methodology with clear milestones and regular
+                    communication. Projects typically start with a discovery phase, followed by iterative development
+                    sprints with weekly check-ins.</p>
+                </div>
+              </div>
+              <div class="bg-gray-800 border border-gray-700 rounded-lg"><button
+                  class="faq-toggle w-full text-left p-6 flex justify-between items-center"><span
+                    class="text-lg font-semibold text-white">What are your rates and payment terms?</span><svg
+                    class="w-5 h-5 text-gray-400 shrink-0 ml-4 transition-transform" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg></button>
+                <div class="faq-answer">
+                  <p class="px-6 pb-6 text-gray-400">Rates vary based on project complexity. I offer both hourly and
+                    project-based pricing. For Toptal clients, rates are set through their platform. For direct
+                    engagements, I provide custom quotes after understanding your needs.</p>
+                </div>
+              </div>
+              <div class="bg-gray-800 border border-gray-700 rounded-lg"><button
+                  class="faq-toggle w-full text-left p-6 flex justify-between items-center"><span
+                    class="text-lg font-semibold text-white">Do you offer ongoing support and maintenance?</span><svg
+                    class="w-5 h-5 text-gray-400 shrink-0 ml-4 transition-transform" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg></button>
+                <div class="faq-answer">
+                  <p class="px-6 pb-6 text-gray-400">Yes, I provide post-launch support and maintenance for all projects
+                    including bug fixes, performance monitoring, security updates, and feature enhancements.</p>
+                </div>
+              </div>
+              <div class="bg-gray-800 border border-gray-700 rounded-lg"><button
+                  class="faq-toggle w-full text-left p-6 flex justify-between items-center"><span
+                    class="text-lg font-semibold text-white">How long does a typical project take?</span><svg
+                    class="w-5 h-5 text-gray-400 shrink-0 ml-4 transition-transform" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg></button>
+                <div class="faq-answer">
+                  <p class="px-6 pb-6 text-gray-400">A simple web application might take 4-8 weeks, while a complex
+                    enterprise system could take 3-6 months. During our initial consultation, I'll provide a detailed
+                    timeline estimate.</p>
+                </div>
+              </div>
+              <div class="bg-gray-800 border border-gray-700 rounded-lg"><button
+                  class="faq-toggle w-full text-left p-6 flex justify-between items-center"><span
+                    class="text-lg font-semibold text-white">Do you sign NDAs?</span><svg
+                    class="w-5 h-5 text-gray-400 shrink-0 ml-4 transition-transform" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg></button>
+                <div class="faq-answer">
+                  <p class="px-6 pb-6 text-gray-400">Absolutely. I understand the importance of confidentiality and am
+                    happy to sign NDAs before discussing project details.</p>
+                </div>
+              </div>
+              <div class="bg-gray-800 border border-gray-700 rounded-lg"><button
+                  class="faq-toggle w-full text-left p-6 flex justify-between items-center"><span
+                    class="text-lg font-semibold text-white">Can you work with our existing team?</span><svg
+                    class="w-5 h-5 text-gray-400 shrink-0 ml-4 transition-transform" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg></button>
+                <div class="faq-answer">
+                  <p class="px-6 pb-6 text-gray-400">Yes, I regularly collaborate with existing development teams. I'm
+                    experienced with GitHub, Azure DevOps, Jira, Slack and can adapt to your team's workflows.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== CONTACT ========== -->
+      <section id="contact" class="border-t border-gray-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+          <div class="py-12 md:py-20">
+            <div class="max-w-3xl mx-auto text-center pb-12 md:pb-16">
+              <h2 class="h2 mb-4">Let's Build Something Great Together</h2>
+              <p class="text-xl text-gray-400">Ready to start your project? Get in touch today.</p>
+            </div>
+            <div class="md:grid md:grid-cols-2 gap-12">
+              <!-- Left - Contact Info -->
+              <div data-aos="fade-right">
+                <h3 class="text-2xl font-bold text-white mb-6">Get In Touch</h3>
+                <div class="space-y-6">
+                  <div class="flex items-start"><svg class="w-6 h-6 text-purple-500 shrink-0" fill="none"
+                      stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <div class="ml-4">
+                      <p class="text-gray-400">Email</p><a href="mailto:contact@rashtan-soft.com"
+                        class="text-white hover:text-purple-400 transition-colors">contact@rashtan-soft.com</a>
+                    </div>
+                  </div>
+                  <div class="flex items-start"><svg class="w-6 h-6 text-purple-500 shrink-0" fill="none"
+                      stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <div class="ml-4">
+                      <p class="text-gray-400">Location</p>
+                      <p class="text-white">Trebinje, Bosnia and Herzegovina</p>
+                      <p class="text-gray-500 text-sm">Available for remote work worldwide</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start"><svg class="w-6 h-6 text-purple-500 shrink-0" fill="none"
+                      stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <div class="ml-4">
+                      <p class="text-gray-400">Response Time</p>
+                      <p class="text-white">Within 24 hours</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Why Work With Me -->
+                <div class="mt-8 bg-gray-800 border border-gray-700 rounded-lg p-6">
+                  <h4 class="text-lg font-semibold text-white mb-3">Why Work With Rashtan Soft?</h4>
+                  <ul class="space-y-2 text-gray-400 text-sm">
+                    <li class="flex items-start"><svg class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"
+                        fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd" />
+                      </svg>Direct access to senior-level expertise (10+ years)</li>
+                    <li class="flex items-start"><svg class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"
+                        fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd" />
+                      </svg>Top 3% Toptal verified developer</li>
+                    <li class="flex items-start"><svg class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"
+                        fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd" />
+                      </svg>Proven track record across 5+ countries</li>
+                    <li class="flex items-start"><svg class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"
+                        fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd" />
+                      </svg>Flexible engagement (part-time or project-based)</li>
+                    <li class="flex items-start"><svg class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"
+                        fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd" />
+                      </svg>Personal attention from founder on every project</li>
+                  </ul>
+                </div>
+              </div>
+              <!-- Right - Calendly Placeholder -->
+              <div data-aos="fade-left">
+                <h3 class="text-2xl font-bold text-white mb-6">Schedule a Free Consultation</h3>
+                <!-- Replace YOUR_CALENDLY_LINK with your actual Calendly URL -->
+                <div class="bg-gray-800 rounded-lg overflow-hidden border border-gray-700 p-8 text-center"
+                  style="min-height:400px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                  <svg class="w-16 h-16 text-purple-500 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  <h4 class="text-xl font-semibold text-white mb-3">Book a 30-Minute Call</h4>
+                  <p class="text-gray-400 mb-6">Discuss your project requirements, get expert advice, and explore how we
+                    can work together.</p>
+                  <a href="mailto:contact@rashtan-soft.com"
+                    class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors inline-block">Email
+                    to Schedule</a>
+                  <p class="text-gray-500 text-sm mt-4">Or connect via <a
+                      href="https://www.linkedin.com/in/gavrilo-mumovic/" target="_blank"
+                      class="text-purple-400 hover:text-purple-300">LinkedIn</a></p>
+                </div>
               </div>
             </div>
           </div>
@@ -527,85 +949,96 @@
     </main>
 
     <!-- ========== FOOTER ========== -->
-    <footer>
-      <div class="py-12 md:py-16">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-          <div class="grid md:grid-cols-12 gap-8 lg:gap-20 mb-8 md:mb-12">
-            <div class="md:col-span-4 lg:col-span-5">
-              <div class="mb-2">
-                <a href="/" class="inline-block" aria-label="Rashtan Soft"><svg
-                    class="w-8 h-8 fill-current text-purple-600" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M31.952 14.751a260.51 260.51 0 00-4.359-4.407C23.932 6.734 20.16 3.182 16.171 0c1.634.017 3.21.28 4.692.751 3.487 3.114 6.846 6.398 10.163 9.737.493 1.346.811 2.776.926 4.262zm-1.388 7.883c-2.496-2.597-5.051-5.12-7.737-7.471-3.706-3.246-10.693-9.81-15.736-7.418-4.552 2.158-4.717 10.543-4.96 16.238A15.926 15.926 0 010 16C0 9.799 3.528 4.421 8.686 1.766c1.82.593 3.593 1.675 5.038 2.587 6.569 4.14 12.29 9.71 17.792 15.57-.237.94-.557 1.846-.952 2.711zm-4.505 5.81a56.161 56.161 0 00-1.007-.823c-2.574-2.054-6.087-4.805-9.394-4.044-3.022.695-4.264 4.267-4.97 7.52a15.945 15.945 0 01-3.665-1.85c.366-3.242.89-6.675 2.405-9.364 2.315-4.107 6.287-3.072 9.613-1.132 3.36 1.96 6.417 4.572 9.313 7.417a16.097 16.097 0 01-2.295 2.275z" />
-                  </svg></a>
-              </div>
-              <div class="text-gray-400">Rashtan-Soft stands at the forefront of technology, specializing in delivering
-                custom solutions with a strong proficiency in C#, React, and Node.js. We not only cater to the specific
-                needs of our clients by building tailored software but also innovate within the tech space by developing
-                and marketing our own products.</div>
+    <footer class="border-t border-gray-800">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+        <div class="grid md:grid-cols-12 gap-8 lg:gap-20 mb-8 md:mb-12">
+          <div class="md:col-span-4 lg:col-span-5">
+            <div class="mb-2">
+              <a href="#home" class="inline-flex items-center" aria-label="Rashtan Soft">
+                <img class="rounded-full" src="images/logo-dark.png" width="32" height="32" alt="Rashtan Soft" />
+                <span class="ml-2 text-lg font-bold text-white">Rashtan Soft</span>
+              </a>
             </div>
-            <div class="md:col-span-8 lg:col-span-7 grid sm:grid-cols-3 gap-8">
-              <div class="text-sm">
-                <h6 class="text-gray-200 font-medium mb-1">Products</h6>
-                <ul>
-                  <li class="mb-1"><a href="https://www.dentallabguru.com/"
-                      class="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Dental Lab Guru</a>
-                  </li>
-                  <li class="mb-1"><a href="https://app.zubnatehnika.org/"
-                      class="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Organizator Zubne
-                      Tehnike</a></li>
-                </ul>
-              </div>
-              <div class="text-sm">
-                <h6 class="text-gray-200 font-medium mb-1">Services</h6>
-                <ul>
-                  <li class="mb-1"><a href="/"
-                      class="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">.NET development</a>
-                  </li>
-                  <li class="mb-1"><a href="/"
-                      class="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">React
-                      development</a></li>
-                  <li class="mb-1"><a href="/"
-                      class="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Node.js
-                      development</a></li>
-                  <li class="mb-1"><a href="/"
-                      class="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">AWS and Azure
-                      hosting</a></li>
-                </ul>
-              </div>
+            <div class="text-gray-400 text-sm">Senior software engineering services specializing in C#, React, and
+              Node.js. Top 3% Toptal verified developer serving clients worldwide.</div>
+          </div>
+          <div class="md:col-span-8 lg:col-span-7 grid sm:grid-cols-3 gap-8">
+            <div class="text-sm">
+              <h6 class="text-gray-200 font-medium mb-2">Products</h6>
+              <ul>
+                <li class="mb-1"><a href="https://www.dentallabguru.com/"
+                    class="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Dental Lab Guru</a>
+                </li>
+                <li class="mb-1"><a href="https://app.zubnatehnika.org/"
+                    class="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Organizator Zubne
+                    Tehnike</a></li>
+              </ul>
+            </div>
+            <div class="text-sm">
+              <h6 class="text-gray-200 font-medium mb-2">Services</h6>
+              <ul>
+                <li class="mb-1"><a href="#services"
+                    class="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">.NET Development</a>
+                </li>
+                <li class="mb-1"><a href="#services"
+                    class="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">React Development</a>
+                </li>
+                <li class="mb-1"><a href="#services"
+                    class="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Node.js
+                    Development</a></li>
+                <li class="mb-1"><a href="#services"
+                    class="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">AWS &amp; Azure
+                    Hosting</a></li>
+              </ul>
+            </div>
+            <div class="text-sm">
+              <h6 class="text-gray-200 font-medium mb-2">Contact</h6>
+              <ul>
+                <li class="mb-1"><a href="mailto:contact@rashtan-soft.com"
+                    class="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">contact@rashtan-soft.com</a>
+                </li>
+                <li class="mb-1 text-gray-400">Trebinje, Bosnia &amp; Herzegovina</li>
+                <li class="mb-1 text-gray-400">Remote worldwide</li>
+              </ul>
             </div>
           </div>
-          <div class="md:flex md:items-center md:justify-between">
-            <ul class="flex mb-4 md:order-1 md:ml-4 md:mb-0">
-              <li class="ml-4"><a href="https://github.com/gajo357"
-                  class="flex justify-center items-center text-purple-600 bg-gray-800 hover:text-gray-100 hover:bg-purple-600 rounded-full transition duration-150 ease-in-out"
-                  aria-label="Github"><svg class="w-8 h-8 fill-current" viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M16 8.2c-4.4 0-8 3.6-8 8 0 3.5 2.3 6.5 5.5 7.6.4.1.5-.2.5-.4V22c-2.2.5-2.7-1-2.7-1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.3 1.9.9 2.3.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-4 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8.6-.2 1.3-.3 2-.3s1.4.1 2 .3c1.5-1 2.2-.8 2.2-.8.4 1.1.2 1.9.1 2.1.5.6.8 1.3.8 2.1 0 3.1-1.9 3.7-3.7 3.9.3.4.6.9.6 1.6v2.2c0 .2.1.5.6.4 3.2-1.1 5.5-4.1 5.5-7.6-.1-4.4-3.7-8-8.1-8z" />
-                  </svg></a></li>
-              <li class="ml-4"><a href="https://www.linkedin.com/in/gavrilo-mumovic/"
-                  class="flex justify-center items-center text-purple-600 bg-gray-800 hover:text-gray-100 hover:bg-purple-600 rounded-full transition duration-150 ease-in-out"
-                  aria-label="Linkedin"><svg class="w-8 h-8 fill-current" viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M23.3 8H8.7c-.4 0-.7.3-.7.7v14.7c0 .3.3.6.7.6h14.7c.4 0 .7-.3.7-.7V8.7c-.1-.4-.4-.7-.8-.7zM12.7 21.6h-2.3V14h2.4v7.6h-.1zM11.6 13c-.8 0-1.4-.7-1.4-1.4 0-.8.6-1.4 1.4-1.4.8 0 1.4.6 1.4 1.4-.1.7-.7 1.4-1.4 1.4zm10 8.6h-2.4v-3.7c0-.9 0-2-1.2-2s-1.4 1-1.4 2v3.8h-2.4V14h2.3v1c.3-.6 1.1-1.2 2.2-1.2 2.4 0 2.8 1.6 2.8 3.6v4.2h.1z" />
-                  </svg></a></li>
-              <li class="ml-4"><a href="https://www.toptal.com/developers/resume/gavrilo-mumovic#qK3P5E"
-                  class="flex justify-center items-center text-purple-600 bg-gray-800 hover:text-gray-100 hover:bg-purple-600 rounded-full transition duration-150 ease-in-out"
-                  aria-label="Hire me on Toptal"><svg class="w-8 h-8 fill-current p-1" viewBox="0 0 24 32"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M8.11 0L14.82 6.7C14.87 6.75 14.91 6.8 14.97 6.85L20.82 12.7L11.31 22.16L15.66 26.52L12.75 29.41L6.09 22.75C6.01 22.68 5.93 22.6 5.85 22.52L0 16.68L9.48 7.25L5.16 2.94L8.11 0ZM12.36 10.5C12.27 10.48 12.18 10.48 12.1 10.5C12.01 10.53 11.94 10.57 11.78 10.72L6.37 16.11C6.21 16.27 6.17 16.34 6.15 16.42C6.12 16.51 6.12 16.6 6.15 16.68C6.17 16.77 6.22 16.85 6.37 17L8.09 18.72C8.24 18.87 8.31 18.91 8.4 18.94C8.49 18.96 8.57 18.96 8.66 18.94C8.75 18.91 8.82 18.87 8.97 18.72L14.38 13.33C14.54 13.18 14.58 13.1 14.61 13.02C14.63 12.93 14.63 12.85 14.61 12.76C14.59 12.67 14.54 12.6 14.39 12.45L12.67 10.73C12.52 10.57 12.44 10.53 12.36 10.5Z" />
-                  </svg></a></li>
-            </ul>
-            <div class="text-gray-400 text-sm mr-4">&copy; Rashtan-Soft. All rights reserved.</div>
-          </div>
+        </div>
+        <div class="md:flex md:items-center md:justify-between">
+          <ul class="flex mb-4 md:order-1 md:ml-4 md:mb-0">
+            <li class="ml-4"><a href="https://github.com/gajo357"
+                class="flex justify-center items-center text-purple-600 bg-gray-800 hover:text-gray-100 hover:bg-purple-600 rounded-full transition duration-150 ease-in-out"
+                aria-label="Github"><svg class="w-8 h-8 fill-current" viewBox="0 0 32 32">
+                  <path
+                    d="M16 8.2c-4.4 0-8 3.6-8 8 0 3.5 2.3 6.5 5.5 7.6.4.1.5-.2.5-.4V22c-2.2.5-2.7-1-2.7-1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.3 1.9.9 2.3.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-4 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8.6-.2 1.3-.3 2-.3s1.4.1 2 .3c1.5-1 2.2-.8 2.2-.8.4 1.1.2 1.9.1 2.1.5.6.8 1.3.8 2.1 0 3.1-1.9 3.7-3.7 3.9.3.4.6.9.6 1.6v2.2c0 .2.1.5.6.4 3.2-1.1 5.5-4.1 5.5-7.6-.1-4.4-3.7-8-8.1-8z" />
+                </svg></a></li>
+            <li class="ml-4"><a href="https://www.linkedin.com/in/gavrilo-mumovic/"
+                class="flex justify-center items-center text-purple-600 bg-gray-800 hover:text-gray-100 hover:bg-purple-600 rounded-full transition duration-150 ease-in-out"
+                aria-label="Linkedin"><svg class="w-8 h-8 fill-current" viewBox="0 0 32 32">
+                  <path
+                    d="M23.3 8H8.7c-.4 0-.7.3-.7.7v14.7c0 .3.3.6.7.6h14.7c.4 0 .7-.3.7-.7V8.7c-.1-.4-.4-.7-.8-.7zM12.7 21.6h-2.3V14h2.4v7.6h-.1zM11.6 13c-.8 0-1.4-.7-1.4-1.4 0-.8.6-1.4 1.4-1.4.8 0 1.4.6 1.4 1.4-.1.7-.7 1.4-1.4 1.4zm10 8.6h-2.4v-3.7c0-.9 0-2-1.2-2s-1.4 1-1.4 2v3.8h-2.4V14h2.3v1c.3-.6 1.1-1.2 2.2-1.2 2.4 0 2.8 1.6 2.8 3.6v4.2h.1z" />
+                </svg></a></li>
+            <li class="ml-4"><a href="https://www.toptal.com/developers/resume/gavrilo-mumovic#qK3P5E"
+                class="flex justify-center items-center text-purple-600 bg-gray-800 hover:text-gray-100 hover:bg-purple-600 rounded-full transition duration-150 ease-in-out"
+                aria-label="Toptal"><svg class="w-8 h-8 fill-current p-1" viewBox="0 0 24 32">
+                  <path
+                    d="M8.11 0L14.82 6.7C14.87 6.75 14.91 6.8 14.97 6.85L20.82 12.7L11.31 22.16L15.66 26.52L12.75 29.41L6.09 22.75C6.01 22.68 5.93 22.6 5.85 22.52L0 16.68L9.48 7.25L5.16 2.94L8.11 0ZM12.36 10.5C12.27 10.48 12.18 10.48 12.1 10.5C12.01 10.53 11.94 10.57 11.78 10.72L6.37 16.11C6.21 16.27 6.17 16.34 6.15 16.42C6.12 16.51 6.12 16.6 6.15 16.68C6.17 16.77 6.22 16.85 6.37 17L8.09 18.72C8.24 18.87 8.31 18.91 8.4 18.94C8.49 18.96 8.57 18.96 8.66 18.94C8.75 18.91 8.82 18.87 8.97 18.72L14.38 13.33C14.54 13.18 14.58 13.1 14.61 13.02C14.63 12.93 14.63 12.85 14.61 12.76C14.59 12.67 14.54 12.6 14.39 12.45L12.67 10.73C12.52 10.57 12.44 10.53 12.36 10.5Z" />
+                </svg></a></li>
+          </ul>
+          <div class="text-gray-400 text-sm mr-4">&copy; Rashtan-Soft. All rights reserved.</div>
         </div>
       </div>
     </footer>
 
   </div>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top"
+    class="fixed bottom-8 right-8 bg-purple-600 hover:bg-purple-700 text-white p-3 rounded-full shadow-lg transition-all opacity-0 invisible z-50"
+    aria-label="Back to top">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+    </svg>
+  </button>
 
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
@@ -625,8 +1058,51 @@
       var v = document.getElementById('modalVideo');
       v.pause(); v.currentTime = 0;
     }
-    // Close on Escape
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeVideoModal(); });
+
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-button').addEventListener('click', function () {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+    document.querySelectorAll('#mobile-menu a').forEach(function (link) {
+      link.addEventListener('click', function () { document.getElementById('mobile-menu').classList.add('hidden'); });
+    });
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          var offset = 64; // nav height
+          var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Back to top
+    var backToTop = document.getElementById('back-to-top');
+    window.addEventListener('scroll', function () {
+      if (window.pageYOffset > 300) {
+        backToTop.classList.remove('opacity-0', 'invisible');
+        backToTop.classList.add('opacity-100', 'visible');
+      } else {
+        backToTop.classList.add('opacity-0', 'invisible');
+        backToTop.classList.remove('opacity-100', 'visible');
+      }
+    });
+    backToTop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+    // FAQ toggles
+    document.querySelectorAll('.faq-toggle').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var answer = this.nextElementSibling;
+        var icon = this.querySelector('svg');
+        answer.classList.toggle('open');
+        icon.style.transform = answer.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0)';
+      });
+    });
   </script>
 </body>
 
