@@ -15,36 +15,24 @@ import CaseStudyLayout from "../../layouts/CaseStudyLayout.astro";
   ]}
   factsHeading="Deathmatch backend"
   facts={[
-    { label: "AWS Lambda functions", value: "Approximately 100", note: "Architecture scale for Deathmatch." },
-    { label: "APIs", value: "3", note: "Architecture scale for Deathmatch." },
-    { label: "DynamoDB data model", value: "A single table", note: "Deathmatch data model." }
+    { label: "AWS Lambda functions", value: "Approximately 100" },
+    { label: "APIs", value: "3" },
+    { label: "DynamoDB data model", value: "A single table" }
   ]}
 >
-  <h2>What I owned</h2>
-  <p>I was responsible for the backend architecture, implementation and production operations for several games. That work covered taking backend decisions from an initial design through implementation and into the day-to-day reality of operating software in production.</p>
-  <p>As the sole backend engineer for these services, I worked across the technical choices that make a backend understandable, changeable and supportable while collaborating with the teams building the wider games.</p>
-
   <h2>Building Deathmatch from scratch</h2>
   <p>I built the Deathmatch backend from scratch. It used around 100 AWS Lambda functions, three APIs and event-driven workflows with SQS, EventBridge, OpenSearch and a single DynamoDB table.</p>
-  <p>Those details describe the shape of the Deathmatch backend rather than the wider Illuvium platform. The work was about creating a service landscape that could support the game as it moved from an initial implementation into production operation.</p>
+  <p>The backend handled matchmaking, progression, rewards and leaderboards. I worked with the game team as the rules evolved, while also building idempotency, caching, analytics and operational tooling.</p>
 
-  <h2>Making the backend easier to operate</h2>
-  <p>Alongside game features, I built idempotency, caching, analytics and operational tooling around the backend. These are the pieces that help a service handle repeated work safely, provide useful signals and remain practical to support after release.</p>
-  <p>Production responsibility shaped the work from the outset: backend decisions needed to account for how the system would be run and changed, not only how an individual endpoint or feature would be implemented.</p>
+  <h2>When cold starts affected players</h2>
+  <p>Some of the games ran their game logic on the backend and synchronised the results to clients. Lambda cold starts delayed that work, so startup performance directly affected the people playing. We had to investigate what was slowing the backend down.</p>
+  <p>I upgraded the backend to .NET 9 and removed AutoMapper as part of that investigation. Those changes reduced Lambda cold starts, addressing a source of delay in the backend that the games depended on.</p>
 
-  <h2>Revisiting earlier choices</h2>
-  <p>As the backend evolved, I revisited earlier choices instead of treating the first implementation as fixed. I upgraded to .NET 9 and removed AutoMapper as part of work focused on Lambda cold starts.</p>
-  <p>The point was to make a targeted runtime decision in response to the backend's operating context. It was practical maintenance work rather than a claim that a first design will stay right indefinitely.</p>
-
-  <h2>Gauntlet: a separate backend story</h2>
-  <p>I also owned the Gauntlet backend from the first line of code until the project moved to GameLift servers. That marks the boundary of the work described here; the Deathmatch architecture details do not apply to Gauntlet.</p>
-
-  <aside class="article-callout">
-    <p><strong>Scope matters.</strong> This case study focuses on my backend contribution. It does not publish internal architecture details, operational data or customer information.</p>
-  </aside>
+  <h2>Gauntlet</h2>
+  <p>I also built and operated the Gauntlet backend, owning it from the first line of code until the project moved to GameLift servers.</p>
 
   <section class="case-technologies" aria-labelledby="illuvium-technologies">
-    <h2 id="illuvium-technologies">Confirmed technology scope</h2>
+    <h2 id="illuvium-technologies">Technologies</h2>
     <ul class="tag-list" aria-label="Illuvium technologies">
       <li>.NET 9</li>
       <li>AWS Lambda</li>

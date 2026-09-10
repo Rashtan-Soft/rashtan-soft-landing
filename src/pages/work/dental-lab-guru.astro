@@ -5,10 +5,10 @@ import CaseStudyLayout from "../../layouts/CaseStudyLayout.astro";
 <CaseStudyLayout
   title="Dental Lab Guru — Building and Running a SaaS Product | Rashtan Soft"
   description="A case study of Gavrilo Mumovic's product and engineering work on Dental Lab Guru."
-  socialDescription="An own SaaS product shaped by customer feedback and ongoing engineering work."
+  socialDescription="A SaaS product I built for dental labs to manage cases, production, deadlines and invoicing."
   eyebrow="Own product"
   caseTitle="Dental Lab Guru — building and running a SaaS product"
-  summary="I built Dental Lab Guru as one of our own SaaS products. It is used by paying dental labs across six countries, and direct customer feedback helps shape what I build next. As the product grew, I moved parts of it towards Node.js, EventBridge and event-driven workflows."
+  summary="I built Dental Lab Guru as one of our own SaaS products. Dental labs use it to manage cases, production, deadlines, deliveries and invoicing. It is used by paying labs across six countries."
   meta={[
     { label: "Role", value: "Product builder and operator" }
   ]}
@@ -19,31 +19,26 @@ import CaseStudyLayout from "../../layouts/CaseStudyLayout.astro";
     { label: "Footprint", value: "Across six countries" }
   ]}
 >
-  <h2>What the product is for</h2>
-  <p>Dental Lab Guru is a SaaS product for dental laboratory workflows. I built it as one of our own products, with the engineering work connected directly to the people who use the software and the decisions needed to keep improving it.</p>
-  <p>That direct connection changes the feedback loop. The work is not complete when a feature is merged: release decisions, customer questions and the next useful change all belong to the same product.</p>
+  <h2>From a dentist’s request to a finished case</h2>
+  <p>A lab records the dentist’s request, due date, materials, files and notes against a case. As the work moves through production, staff can see its current stage and who is responsible. Delivery, invoices and payment status stay attached to that same case.</p>
+  <p>That lets a lab answer everyday questions: what is due, what is late, what each technician is working on and which completed cases still need payment.</p>
 
-  <h2>Product and engineering responsibility</h2>
-  <p>Building an own product brings product decisions, backend development, cloud infrastructure and frontend work into one connected responsibility. The useful engineering choices are the ones that make the product clearer for its users and easier to change as the work around it evolves.</p>
-  <p>I treat the product as an operating service rather than a finished release: the customer context, the implementation and the next product decision all inform one another.</p>
+  <figure class="product-figure">
+    <a href="/images/dental-lab-guru-case.webp" target="_blank" rel="noopener noreferrer" aria-label="Open the Dental Lab Guru demo screenshot at full size">
+      <img src="/images/dental-lab-guru-case.webp" width="800" height="587" alt="Dental Lab Guru demo case showing restoration details, due dates, attachments and production tasks." loading="lazy" decoding="async" />
+    </a>
+    <figcaption>A case record with demo data: the requested work, deadlines and production tasks in one place. Open the image for a closer look.</figcaption>
+  </figure>
 
-  <h2>Feedback shapes the next change</h2>
-  <p>Direct customer feedback helps shape Dental Lab Guru. It keeps product work grounded in the needs of dental labs instead of treating a feature list as the whole problem.</p>
-  <p>That approach makes room for a careful balance: improving the workflow that customers need next while preserving the reliability of the product they already use.</p>
+  <h2>A customer who used every feature</h2>
+  <p>One customer used every feature in the app. That depth of use surfaced bugs, inconsistencies and feature requests across the product, giving us a much clearer picture of where daily work was awkward.</p>
+  <p>I used that feedback to fix bugs, resolve inconsistencies and shape further development. The result was a tighter, more consistent application across the workflows that customer relied on.</p>
 
   <h2>Evolving the backend</h2>
-  <p>As Dental Lab Guru grew, I moved parts of it towards Node.js, EventBridge and event-driven workflows. The scope matters: this was an evolution of selected parts of the product, not a claim that the whole application was rewritten.</p>
-  <p>The change reflects the ongoing engineering work behind a SaaS product—making deliberate adjustments while continuing to support the product in use.</p>
-
-  <h2>The work around the product</h2>
-  <p>Operating an own product also means making decisions around releases, customer feedback and the next area of work. Those decisions are part of the engineering responsibility because they shape how the product continues to serve its users over time.</p>
-
-  <aside class="article-callout">
-    <p><strong>A separate path for product visitors.</strong> This page explains the engineering work behind Dental Lab Guru. For product information, visit the public Dental Lab Guru website.</p>
-  </aside>
+  <p>As Dental Lab Guru grew, I moved parts of it towards Node.js, EventBridge and event-driven workflows. My work spans backend development, cloud infrastructure and frontend implementation, alongside releases and direct conversations with customers.</p>
 
   <section class="case-technologies" aria-labelledby="dental-lab-guru-technologies">
-    <h2 id="dental-lab-guru-technologies">Confirmed technology scope</h2>
+    <h2 id="dental-lab-guru-technologies">Technologies</h2>
     <ul class="tag-list" aria-label="Dental Lab Guru technologies">
       <li>Node.js</li>
       <li>EventBridge</li>

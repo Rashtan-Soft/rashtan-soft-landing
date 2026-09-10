@@ -229,7 +229,7 @@ textarea:focus-visible {
 .hero {
   position: relative;
   overflow: clip;
-  padding: clamp(4.5rem, 10vw, 8rem) 0 clamp(4.25rem, 9vw, 7rem);
+  padding: clamp(3rem, 6vw, 5rem) 0 clamp(2rem, 4vw, 3.5rem);
 }
 
 .hero::after {
@@ -306,6 +306,11 @@ h1 {
   max-width: 13ch;
   margin-bottom: 1.35rem;
   font-size: clamp(2.7rem, 6vw, 5.35rem);
+}
+
+.hero h1 {
+  max-width: 18ch;
+  font-size: clamp(2.375rem, 4.5vw, 4rem);
 }
 
 h2 {
@@ -777,6 +782,11 @@ h4 {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-row .field {
+  margin-bottom: 0;
 }
 
 .field {
@@ -1021,6 +1031,26 @@ h4 {
   color: var(--paper);
 }
 
+.product-figure {
+  margin: 2rem 0;
+}
+
+.product-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+
+.product-figure figcaption {
+  margin-top: 0.8rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
 .article-callout {
   margin: 2.4rem 0;
   padding: 1.35rem 1.5rem;
@@ -1109,9 +1139,18 @@ article .case-result__label {
   text-transform: uppercase;
 }
 
-.profile-aside a {
-  display: inline-flex;
-  margin-top: 0.75rem;
+.profile-portrait {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 1.5rem;
+  border-radius: var(--radius-sm);
+}
+
+.profile-aside__links {
+  display: grid;
+  justify-items: start;
+  gap: 1rem;
 }
 
 .timeline {
@@ -1141,6 +1180,15 @@ article .case-result__label {
 .timeline p {
   margin-bottom: 0;
   color: var(--muted);
+}
+
+.timeline .timeline__period {
+  margin-bottom: 0.7rem;
+  font-size: 0.9rem;
+}
+
+.timeline .text-link {
+  margin-top: 0.85rem;
 }
 
 .privacy-list {
@@ -1299,11 +1347,7 @@ article .case-result__label {
   }
 
   .signal-panel {
-    min-height: auto;
-  }
-
-  .signal-map {
-    height: 17rem;
+    display: none;
   }
 
   .footer-grid {
@@ -1330,7 +1374,7 @@ article .case-result__label {
   }
 
   .hero {
-    padding-top: 3.9rem;
+    padding-top: 2.75rem;
   }
 
   h1 {
@@ -1340,10 +1384,6 @@ article .case-result__label {
   .signal-panel__footer,
   .form-row {
     grid-template-columns: 1fr;
-  }
-
-  .form-row .field:last-child {
-    margin-bottom: 0;
   }
 
   .footer-bottom {
