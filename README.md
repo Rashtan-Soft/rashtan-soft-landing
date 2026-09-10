@@ -1,6 +1,6 @@
 # Rashtan Soft website
 
-Static marketing website for Gavrilo Mumovic and Rashtan Soft. Azure Static Web Apps deploys the repository root without a build step.
+Astro website for Gavrilo Mumovic and Rashtan Soft. It generates a static site that Azure Static Web Apps deploys from `dist`.
 
 ## Pages
 
@@ -11,17 +11,18 @@ Static marketing website for Gavrilo Mumovic and Rashtan Soft. Azure Static Web 
 - `/work/stubhub/` — payment work case study
 - `/privacy/` — contact and delivery-data notice
 
-The shared presentation and behaviour live in `assets/css/site.css`, `assets/js/site.js` and `assets/js/contact.js`.
+The shared document shell lives in `src/layouts/` and `src/components/`; pages live in `src/pages/`; global styles live in `src/styles/site.css`. Public files that must be copied unchanged into the deployment output live in `public/`.
 
 ## Local preview
 
-Serve the repository root with any static HTTP server. For example:
+Install dependencies and start Astro's development server:
 
 ```powershell
-py -m http.server 8080
+npm install
+npm run dev
 ```
 
-Then visit `http://localhost:8080/`.
+Astro prints the local URL, normally `http://localhost:4321/`.
 
 Test nested routes by loading them directly, not only by following links:
 
@@ -44,6 +45,6 @@ When adding a substantive public page, update its title, description, canonical 
 
 ## Hosting configuration
 
-`staticwebapp.config.json` provides security headers and a custom 404 response. It deliberately does not use a single-page-app fallback so missing multi-page routes return a real 404.
+`public/staticwebapp.config.json` provides security headers and a custom 404 response. It deliberately does not use a single-page-app fallback so missing multi-page routes return a real 404.
 
-The Azure workflow under `.github/workflows/` deploys from the repository root when changes reach `main`.
+The Azure workflow under `.github/workflows/` installs dependencies, builds the Astro output and deploys `dist` when changes reach `main`.

@@ -1,0 +1,28 @@
+---
+import CaseStudyHero from "../components/CaseStudyHero.astro";
+import BaseLayout from "./BaseLayout.astro";
+
+interface Fact {
+  label: string;
+  value: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  socialDescription: string;
+  eyebrow: string;
+  caseTitle: string;
+  summary: string;
+  facts: Fact[];
+}
+
+const { title, description, socialDescription, eyebrow, caseTitle, summary, facts } = Astro.props;
+---
+
+<BaseLayout title={title} description={description} socialType="article" socialDescription={socialDescription}>
+  <CaseStudyHero eyebrow={eyebrow} title={caseTitle} summary={summary} facts={facts} />
+  <article class="article">
+    <slot />
+  </article>
+</BaseLayout>

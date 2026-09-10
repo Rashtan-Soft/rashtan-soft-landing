@@ -1,0 +1,43 @@
+---
+interface Props {
+  page?: "home" | "about" | "privacy";
+  minimal?: boolean;
+}
+
+const { page, minimal = false } = Astro.props;
+const href = (section: string) => (page === "home" ? `#${section}` : `/#${section}`);
+---
+
+<footer class="site-footer">
+  <div class="container">
+    {minimal ? (
+      <div class="footer-bottom">
+        <span>© 2026 Rashtan Soft</span>
+        <span><a href="/privacy/">Privacy</a></span>
+      </div>
+    ) : (
+      <>
+        <div class="footer-grid">
+          <div>
+            <a class="brand" href="/" aria-label="Rashtan Soft home">
+              <img class="brand__mark" src="/images/logo-dark.png" width="40" height="40" alt="" />
+              <span class="brand__name">Rashtan Soft</span>
+            </a>
+            <p class="footer-copy">Hands-on software engineering from backend systems to production.</p>
+          </div>
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href={href("portfolio")}>Work</a>
+            <a href={href("services")}>How I help</a>
+            <a href="/about/" aria-current={page === "about" ? "page" : undefined}>About</a>
+            <a href={href("contact")}>Contact</a>
+            <a href="/privacy/" aria-current={page === "privacy" ? "page" : undefined}>Privacy</a>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 Rashtan Soft</span>
+          <span><a href="https://www.linkedin.com/in/gavrilo-mumovic/" target="_blank" rel="noopener noreferrer">LinkedIn</a> · <a href="https://github.com/gajo357" target="_blank" rel="noopener noreferrer">GitHub</a></span>
+        </div>
+      </>
+    )}
+  </div>
+</footer>

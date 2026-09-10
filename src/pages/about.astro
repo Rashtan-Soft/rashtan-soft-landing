@@ -1,0 +1,76 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  mainEntity: {
+    "@type": "Person",
+    name: "Gavrilo Mumovic",
+    jobTitle: "Software Engineer",
+    url: "https://www.rashtan-soft.com/about/",
+    sameAs: [
+      "https://www.linkedin.com/in/gavrilo-mumovic/",
+      "https://github.com/gajo357",
+      "https://www.toptal.com/developers/resume/gavrilo-mumovic"
+    ]
+  }
+};
+---
+
+<BaseLayout
+  title="About Gavrilo Mumovic | Rashtan Soft"
+  description="About Gavrilo Mumovic, a hands-on software engineer and founder of Rashtan Soft."
+  socialType="profile"
+  socialDescription="About the engineer and business behind Rashtan Soft."
+  page="about"
+  schema={schema}
+>
+  <section class="page-hero" aria-labelledby="about-title">
+    <div class="container page-hero__grid">
+      <div>
+        <p class="eyebrow">About</p>
+        <h1 id="about-title">Gavrilo Mumovic and Rashtan Soft</h1>
+        <p class="page-hero__summary">I am a hands-on software engineer. Rashtan Soft is the business behind the backend systems, cloud infrastructure and products I build.</p>
+      </div>
+      <dl class="fact-list">
+        <div><dt>Based in</dt><dd>Trebinje, Bosnia and Herzegovina</dd></div>
+        <div><dt>Focus</dt><dd>Backend, cloud and product engineering</dd></div>
+        <div><dt>Working style</dt><dd>Understand context, then make the next useful change</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container profile-layout">
+      <aside class="profile-aside">
+        <p class="profile-aside__label">Professional profiles</p>
+        <a class="text-link" href="https://www.linkedin.com/in/gavrilo-mumovic/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="text-link" href="https://github.com/gajo357" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="text-link" href="https://www.toptal.com/developers/resume/gavrilo-mumovic" target="_blank" rel="noopener noreferrer">Toptal</a>
+        <a class="text-link" href="mailto:admin@rashtan-soft.com">Request a current CV</a>
+      </aside>
+
+      <div class="about-copy">
+        <p class="eyebrow">Experience</p>
+        <h2>Work across systems, infrastructure and products.</h2>
+        <p>My experience includes industrial systems at Calsep A/S, game infrastructure at Illuvium and payment work within StubHub, alongside the responsibility of building my own product, Dental Lab Guru.</p>
+        <p>These settings call for different tools and different decisions, but they share a pattern: understand the system that is already there, make the work understandable to the people around it and take responsibility for what happens after release.</p>
+
+        <ol class="timeline" aria-label="Selected experience">
+          <li><span class="timeline__label">Rashtan Soft</span><h3>Founder and hands-on engineer</h3><p>The business behind my independent engineering work and products.</p></li>
+          <li><span class="timeline__label">Dental Lab Guru</span><h3>Own product</h3><p>Product engineering and operating work for dental laboratory workflows.</p></li>
+          <li><span class="timeline__label">Illuvium</span><h3>Backend systems and infrastructure</h3><p>Professional work on backend and production systems for a game project.</p></li>
+          <li><span class="timeline__label">StubHub</span><h3>Payment-processing work</h3><p>Professional work within an established ticketing platform.</p></li>
+          <li><span class="timeline__label">Calsep A/S</span><h3>Industrial systems</h3><p>Experience building software in a technical industrial context.</p></li>
+        </ol>
+
+        <p class="eyebrow eyebrow--spaced">The business</p>
+        <h2>One person, a clear working relationship.</h2>
+        <p>Rashtan Soft is not presented as a general-purpose agency. The site is about the work I personally do, the products I operate and the professional experience that informs my approach.</p>
+        <p>For a defined project, an existing-system problem or a team that needs hands-on engineering help, the useful first step is a short conversation about the context and responsibility involved.</p>
+        <a class="button" href="/#contact">Get in touch</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

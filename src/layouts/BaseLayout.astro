@@ -1,0 +1,61 @@
+---
+import SiteFooter from "../components/SiteFooter.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import "../styles/site.css";
+
+interface Props {
+  title: string;
+  description?: string;
+  page?: "home" | "about" | "privacy";
+  socialType?: "website" | "profile" | "article";
+  socialDescription?: string;
+  schema?: Record<string, unknown>;
+  noindex?: boolean;
+  minimal?: boolean;
+}
+
+const {
+  title,
+  description,
+  page,
+  socialType = "website",
+  socialDescription = description,
+  schema,
+  noindex = false,
+  minimal = false
+} = Astro.props;
+const site = "https://www.rashtan-soft.com";
+const canonical = new URL(Astro.url.pathname, site).toString();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#06141a" />
+    {noindex && <meta name="robots" content="noindex" />}
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    <meta name="author" content="Gavrilo Mumovic" />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content={socialType} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    {socialDescription && <meta property="og:description" content={socialDescription} />}
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    {socialDescription && <meta name="twitter:description" content={socialDescription} />}
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <SiteHeader page={page} minimal={minimal} />
+    <main id="main-content" class:list={{ "not-found": minimal }}>
+      <slot />
+    </main>
+    <SiteFooter page={page} minimal={minimal} />
+    {!minimal && <script src="../scripts/site.ts"></script>}
+  </body>
+</html>

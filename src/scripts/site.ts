@@ -1,9 +1,7 @@
-(function () {
-  "use strict";
-
-  var root = document.documentElement;
-  var toggle = document.querySelector("[data-menu-toggle]");
-  var navigation = document.querySelector("[data-site-nav]");
+(() => {
+  const root = document.documentElement;
+  const toggle = document.querySelector<HTMLButtonElement>("[data-menu-toggle]");
+  const navigation = document.querySelector<HTMLElement>("[data-site-nav]");
 
   root.classList.add("has-js");
 
@@ -11,33 +9,31 @@
     return;
   }
 
-  function closeMenu() {
+  const closeMenu = () => {
     navigation.classList.remove("is-open");
     toggle.setAttribute("aria-expanded", "false");
-  }
+  };
 
-  function isMenuOpen() {
-    return navigation.classList.contains("is-open");
-  }
+  const isMenuOpen = () => navigation.classList.contains("is-open");
 
-  toggle.addEventListener("click", function () {
-    var nextState = !isMenuOpen();
+  toggle.addEventListener("click", () => {
+    const nextState = !isMenuOpen();
     navigation.classList.toggle("is-open", nextState);
     toggle.setAttribute("aria-expanded", String(nextState));
   });
 
-  navigation.querySelectorAll("a").forEach(function (link) {
+  navigation.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", closeMenu);
   });
 
-  document.addEventListener("keydown", function (event) {
+  document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && isMenuOpen()) {
       closeMenu();
       toggle.focus();
     }
   });
 
-  document.addEventListener("click", function (event) {
+  document.addEventListener("click", (event) => {
     if (isMenuOpen() && !navigation.contains(event.target) && !toggle.contains(event.target)) {
       closeMenu();
     }

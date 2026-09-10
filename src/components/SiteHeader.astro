@@ -1,0 +1,32 @@
+---
+interface Props {
+  page?: "home" | "about" | "privacy";
+  minimal?: boolean;
+}
+
+const { page, minimal = false } = Astro.props;
+const href = (section: string) => (page === "home" ? `#${section}` : `/#${section}`);
+---
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="/" aria-label="Rashtan Soft home">
+      <img class="brand__mark" src="/images/logo-dark.png" width="40" height="40" alt="" />
+      <span class="brand__name">Rashtan Soft</span>
+    </a>
+
+    {!minimal && (
+      <button class="menu-toggle" type="button" data-menu-toggle aria-controls="site-navigation" aria-expanded="false">
+        <span class="menu-toggle__lines" aria-hidden="true"></span>
+        <span class="visually-hidden">Menu</span>
+      </button>
+    )}
+
+    <nav class="site-nav" id={minimal ? undefined : "site-navigation"} data-site-nav={minimal ? undefined : true} aria-label="Primary navigation">
+      <a href={href("portfolio")}>Work</a>
+      <a href={href("services")}>How I help</a>
+      <a href="/about/" aria-current={page === "about" ? "page" : undefined}>About</a>
+      <a class="nav-contact" href={href("contact")}>Contact</a>
+    </nav>
+  </div>
+</header>
