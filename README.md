@@ -1,36 +1,49 @@
-# Rashtan Soft landing page
+# Rashtan Soft website
 
-## Usage
+Static marketing website for Gavrilo Mumovic and Rashtan Soft. Azure Static Web Apps deploys the repository root without a build step.
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Pages
 
-### Getting Started
+- `/` — homepage, selected work, services and contact
+- `/about/` — professional background and Rashtan Soft
+- `/work/illuvium/` — backend systems case study
+- `/work/dental-lab-guru/` — owned-product case study
+- `/work/stubhub/` — payment work case study
+- `/privacy/` — contact and delivery-data notice
 
-First, run the development server:
+The shared presentation and behaviour live in `assets/css/site.css`, `assets/js/site.js` and `assets/js/contact.js`.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+## Local preview
+
+Serve the repository root with any static HTTP server. For example:
+
+```powershell
+py -m http.server 8080
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then visit `http://localhost:8080/`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Test nested routes by loading them directly, not only by following links:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```text
+http://localhost:8080/about/
+http://localhost:8080/work/illuvium/
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Contact form
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+The contact form uses the existing Formspree endpoint. It retains a normal HTML `action` and `method` so it can submit when JavaScript is unavailable. Client-side JavaScript adds pending, success, timeout and error feedback without clearing a failed submission.
 
-### Learn More
+Before publishing, verify that the Formspree account accepts the current domain, has an intended inbox, validates the `name`, `email` and `message` fields, and receives a controlled test enquiry. The form includes Formspree's `_gotcha` honeypot field.
 
-To learn more about Next.js, take a look at the following resources:
+## Content updates
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Keep all public project claims accurate and scoped to the contributor's role. Confirm a project's relationship label, results, dates, screenshots and testimonial permissions before adding them. Do not publish confidential architecture, customer data or unsupported metrics.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+When adding a substantive public page, update its title, description, canonical URL, social metadata and `sitemap.xml`. Keep `/privacy/` aligned with the actual form provider, analytics setup and external services.
+
+## Hosting configuration
+
+`staticwebapp.config.json` provides security headers and a custom 404 response. It deliberately does not use a single-page-app fallback so missing multi-page routes return a real 404.
+
+The Azure workflow under `.github/workflows/` deploys from the repository root when changes reach `main`.

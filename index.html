@@ -1,1622 +1,322 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rashtan Soft — Senior C#, React & Node.js Development | Top 3% Toptal Developer</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06141a">
+  <title>Gavrilo Mumovic | Backend &amp; Cloud Engineering | Rashtan Soft</title>
   <meta name="description"
-    content="Expert software development services specializing in C#/.NET, React, and Node.js. Top 3% Toptal verified developer with 10+ years experience. Serving clients worldwide with enterprise-grade solutions." />
-  <meta name="keywords"
-    content="C# developer, .NET developer, React developer, Node.js developer, software development, Toptal developer, remote developer, full-stack developer, Azure, AWS" />
-  <meta name="author" content="Gavrilo Mumovic" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.rashtan-soft.com/" />
-  <meta property="og:title" content="Rashtan Soft — Senior C#, React & Node.js Development" />
+    content="Gavrilo Mumovic builds backend systems, cloud infrastructure and SaaS products through Rashtan Soft.">
+  <meta name="author" content="Gavrilo Mumovic">
+  <link rel="canonical" href="https://www.rashtan-soft.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.rashtan-soft.com/">
+  <meta property="og:title" content="Gavrilo Mumovic | Backend &amp; Cloud Engineering | Rashtan Soft">
   <meta property="og:description"
-    content="Expert software development services specializing in C#/.NET, React, and Node.js. Top 3% Toptal verified developer with 10+ years experience." />
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://www.rashtan-soft.com/" />
-  <meta property="twitter:title" content="Rashtan Soft — Senior C#, React & Node.js Development" />
-  <meta property="twitter:description"
-    content="Expert software development services specializing in C#/.NET, React, and Node.js. Top 3% Toptal verified developer with 10+ years experience." />
-  <link rel="canonical" href="https://www.rashtan-soft.com/" />
-  <link rel="icon" href="favicon.ico" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Architects+Daughter&display=swap"
-    rel="stylesheet" />
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            gray: { 100: '#EBF1F5', 200: '#D9E3EA', 300: '#C5D2DC', 400: '#9BA9B4', 500: '#707D86', 600: '#55595F', 700: '#33363A', 800: '#25282C', 900: '#151719', 950: '#0d0e10' },
-            purple: { 100: '#F4F4FF', 200: '#E2E1FF', 300: '#CBCCFF', 400: '#ABABFF', 500: '#8D8DFF', 600: '#5D5DFF', 700: '#4B4ACF', 800: '#38379C', 900: '#262668' }
-          },
-          fontFamily: { inter: ['Inter', 'sans-serif'], 'architects-daughter': ['Architects Daughter', 'sans-serif'] },
-          fontSize: { xs: '0.75rem', sm: '0.875rem', base: '1rem', lg: '1.125rem', xl: '1.25rem', '2xl': '1.5rem', '3xl': '2rem', '4xl': '2.5rem', '5xl': '3.25rem', '6xl': '4rem' },
-          letterSpacing: { tighter: '-0.02em', tight: '-0.01em', normal: '0', wide: '0.01em', wider: '0.02em', widest: '0.4em' }
-        }
+    content="Hands-on software engineering, from backend to production.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Gavrilo Mumovic | Backend &amp; Cloud Engineering | Rashtan Soft">
+  <meta name="twitter:description" content="Hands-on software engineering, from backend to production.">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Rashtan Soft",
+      "url": "https://www.rashtan-soft.com/",
+      "email": "admin@rashtan-soft.com",
+      "founder": {
+        "@type": "Person",
+        "name": "Gavrilo Mumovic"
       }
     }
   </script>
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-
-    .h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-    }
-
-    .h2 {
-      font-size: 2rem;
-      font-weight: 800;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-    }
-
-    .h3 {
-      font-size: 2rem;
-      font-weight: 700;
-      line-height: 1.25;
-    }
-
-    .h4 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      line-height: 1.375;
-      letter-spacing: -0.01em;
-    }
-
-    @media(min-width:768px) {
-      .h1 {
-        font-size: 3.25rem;
-      }
-
-      .h2 {
-        font-size: 2.5rem;
-      }
-    }
-
-    @import url("https://use.typekit.net/kmj5qkr.css");
-
-    .toptal-badge {
-      --h: polygon(50% 0, 100% 24%, 100% 76%, 50% 100%, 0 76%, 0 24%);
-      font-family: proxima-nova, Arial, sans-serif;
-    }
-
-    .badge-outer {
-      display: inline-block;
-      background: #25a9ef;
-      padding: 6px;
-      clip-path: var(--h);
-    }
-
-    .badge-inner {
-      width: 200px;
-      padding: 24px 0 40px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      color: #204ecf;
-      text-align: center;
-      background: radial-gradient(circle at 20% -10%, #00c3ff -80%, #fff 30%), radial-gradient(circle at -20% 20%, #00c3ff -80%, #fff 30%), radial-gradient(circle at 70% 100%, #00c3ff -80%, #fff 30%), radial-gradient(circle at 120% 80%, #00c3ff -80%, #fff 30%);
-      background-blend-mode: multiply;
-      clip-path: var(--h);
-      box-shadow: 0 28px 50px rgba(6, 30, 96, .35);
-    }
-
-    .badge-title {
-      margin: 0;
-      font-size: 19px;
-      font-weight: 700;
-      line-height: 1;
-    }
-
-    .badge-divider {
-      width: 120px;
-      height: 1px;
-      background: #25a9ef;
-    }
-
-    .badge-subtitle {
-      font-size: 16px;
-      margin-bottom: -6px;
-    }
-
-    .badge-cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 4px 20px;
-      border-radius: 6px;
-      background: #296bff;
-      color: #fff;
-      font-size: 16px;
-      font-weight: 500;
-      text-decoration: none;
-      transition: background .2s ease;
-    }
-
-    .badge-cta:hover {
-      background: #1c56d6;
-    }
-
-    .video-modal-backdrop {
-      position: fixed;
-      inset: 0;
-      z-index: 99999;
-      background: rgba(0, 0, 0, .75);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity .2s ease;
-    }
-
-    .video-modal-backdrop.active {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .video-modal-container {
-      position: fixed;
-      inset: 0;
-      z-index: 99999;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem;
-      opacity: 0;
-      transform: scale(.95);
-      pointer-events: none;
-      transition: opacity .2s ease, transform .2s ease;
-    }
-
-    .video-modal-container.active {
-      opacity: 1;
-      transform: scale(1);
-      pointer-events: auto;
-    }
-
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height .3s ease;
-    }
-
-    .faq-answer.open {
-      max-height: 500px;
-    }
-  </style>
 </head>
 
-<body class="font-inter antialiased bg-gray-900 text-gray-200 tracking-tight">
-  <div class="flex flex-col min-h-screen overflow-hidden">
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
-    <!-- ========== STICKY NAVIGATION ========== -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="flex justify-between items-center h-16">
-          <a href="#home" class="flex items-center shrink-0">
-            <img class="rounded-full" src="images/logo-dark.png" width="40" height="40" alt="Rashtan Soft" />
-            <span class="ml-2 text-lg font-bold text-white">Rashtan Soft</span>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="/" aria-label="Rashtan Soft home">
+        <img class="brand__mark" src="/images/logo-dark.png" width="40" height="40" alt="">
+        <span class="brand__name">Rashtan Soft</span>
+      </a>
+
+      <button class="menu-toggle" type="button" data-menu-toggle aria-controls="site-navigation" aria-expanded="false">
+        <span class="menu-toggle__lines" aria-hidden="true"></span>
+        <span class="visually-hidden">Menu</span>
+      </button>
+
+      <nav class="site-nav" id="site-navigation" data-site-nav aria-label="Primary navigation">
+        <a href="#portfolio">Work</a>
+        <a href="#services">How I help</a>
+        <a href="/about/">About</a>
+        <a class="nav-contact" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero__grid">
+        <div>
+          <p class="eyebrow">Rashtan Soft · Gavrilo Mumovic</p>
+          <h1 id="hero-title">Hands-on software engineering, from backend to production.</h1>
+          <p class="lede">I build backend systems, cloud infrastructure and SaaS products—mainly with .NET, AWS and Node.js. Rashtan Soft is the business behind my work.</p>
+          <div class="hero__actions">
+            <a class="button" href="#contact">Discuss a project</a>
+            <a class="button button--secondary" href="#portfolio">See selected work</a>
+          </div>
+          <p class="hero__note">Based in Trebinje, Bosnia and Herzegovina · <a href="https://www.toptal.com/developers/resume/gavrilo-mumovic" target="_blank" rel="noopener noreferrer">View my Toptal profile</a></p>
+        </div>
+
+        <div class="signal-panel" aria-hidden="true">
+          <div class="signal-panel__label"><span>Engineering focus</span><span>In production</span></div>
+          <svg class="signal-map" viewBox="0 0 420 300" role="img">
+            <path class="signal-map__line" d="M48 75H153L205 130H356"></path>
+            <path class="signal-map__line" d="M47 229H138L205 164H358"></path>
+            <path class="signal-map__line--bright" d="M205 78V223"></path>
+            <path class="signal-map__line" d="M120 42V106"></path>
+            <path class="signal-map__line" d="M286 196V258"></path>
+            <circle class="signal-map__node" cx="48" cy="75" r="12"></circle>
+            <circle class="signal-map__node" cx="48" cy="229" r="12"></circle>
+            <circle class="signal-map__node" cx="120" cy="42" r="12"></circle>
+            <circle class="signal-map__node" cx="286" cy="258" r="12"></circle>
+            <circle class="signal-map__node" cx="356" cy="130" r="12"></circle>
+            <circle class="signal-map__node" cx="358" cy="164" r="12"></circle>
+            <circle class="signal-map__node--primary" cx="205" cy="78" r="13"></circle>
+            <circle class="signal-map__node--primary" cx="205" cy="223" r="13"></circle>
+            <text x="27" y="112">CONTEXT</text>
+            <text x="20" y="265">CHANGE</text>
+            <text x="87" y="25">SYSTEMS</text>
+            <text x="252" y="288">RELEASE</text>
+            <text x="316" y="112">OBSERVE</text>
+            <text x="322" y="198">OPERATE</text>
+            <text x="170" y="58">DESIGN</text>
+            <text x="175" y="252">REVIEW</text>
+          </svg>
+          <div class="signal-panel__footer">
+            <span>Approach<strong>Understand first</strong></span>
+            <span>Delivery<strong>Build in steps</strong></span>
+            <span>Focus<strong>Useful outcomes</strong></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="portfolio" aria-labelledby="work-title">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Selected work</p>
+            <h2 id="work-title">Systems and products I have helped build, improve and operate.</h2>
+          </div>
+          <p class="section-heading__copy">These are focused engineering stories. Each describes the context and contribution without turning confidential work into a sales claim.</p>
+        </div>
+
+        <div class="project-grid">
+          <article class="work-card work-card--product">
+            <p class="work-card__meta">Own product</p>
+            <h3>Dental Lab Guru</h3>
+            <p>An operated product for dental laboratory workflows, shaped by the work around software: releases, feedback and ongoing decisions.</p>
+            <div class="work-card__footer">
+              <a class="text-link" href="/work/dental-lab-guru/">Read the engineering case study</a>
+              <a class="text-link" href="https://www.dentallabguru.com/" target="_blank" rel="noopener noreferrer">Visit the product</a>
+            </div>
+          </article>
+
+          <article class="work-card work-card--systems">
+            <p class="work-card__meta">Professional experience</p>
+            <h3>Illuvium</h3>
+            <p>Backend systems and infrastructure for a game project, with engineering work that extends from architecture into production.</p>
+            <div class="work-card__footer">
+              <a class="text-link" href="/work/illuvium/">Read the case study</a>
+              <ul class="tag-list" aria-label="Relevant areas">
+                <li>Backend</li>
+                <li>Cloud</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="work-card work-card--payments">
+            <p class="work-card__meta">Professional experience</p>
+            <h3>StubHub</h3>
+            <p>Payment-processing work within a large, established ticketing system, where careful changes matter as much as new features.</p>
+            <div class="work-card__footer">
+              <a class="text-link" href="/work/stubhub/">Read the case study</a>
+              <ul class="tag-list" aria-label="Relevant areas">
+                <li>Payments</li>
+                <li>Existing systems</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--surface" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">How I help</p>
+            <h2 id="services-title">Engineering support built around the work that needs doing.</h2>
+          </div>
+          <p class="section-heading__copy">The useful scope comes first. Tools support the work; they do not define it.</p>
+        </div>
+
+        <div class="offer-grid">
+          <article class="offer">
+            <span class="offer__number" aria-hidden="true">01</span>
+            <h3>Build a product or backend</h3>
+            <p>Take a defined product, workflow or backend from initial requirements to production. Work can include APIs, data modelling, integrations, deployment and a React interface where useful.</p>
+          </article>
+          <article class="offer">
+            <span class="offer__number" aria-hidden="true">02</span>
+            <h3>Improve an existing system</h3>
+            <p>Investigate performance or reliability problems, modernise difficult code, or make a deployment process easier to operate. Start by understanding the system and its constraints.</p>
+          </article>
+          <article class="offer">
+            <span class="offer__number" aria-hidden="true">03</span>
+            <h3>Join an engineering team</h3>
+            <p>Provide hands-on engineering capacity, architecture input, code review and ownership of a substantial area of work.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="process-title">
+      <div class="container process">
+        <div class="process__intro">
+          <p class="eyebrow">Working together</p>
+          <h2 id="process-title">A clear next step, not a one-size-fits-all package.</h2>
+          <p class="section-copy">The right arrangement can be a defined project, ongoing contract work or a separately agreed support plan.</p>
+        </div>
+        <ol class="process-list">
+          <li class="step">
+            <span class="step__number" aria-hidden="true">01</span>
+            <div>
+              <h3>Understand the problem</h3>
+              <p>We look at the goal, the current system and the constraints that should shape the work. Larger or uncertain initiatives may need a separate discovery phase.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step__number" aria-hidden="true">02</span>
+            <div>
+              <h3>Agree the next piece of work</h3>
+              <p>We define responsibility, deliverables, communication and the commercial arrangement before work begins.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step__number" aria-hidden="true">03</span>
+            <div>
+              <h3>Build and review</h3>
+              <p>I share working progress, adapt when the evidence changes and agree what happens after release.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section--surface" aria-labelledby="about-title">
+      <div class="container statement-grid">
+        <div class="statement">
+          <p>Good engineering starts with the actual system, the people using it and the limits that matter.</p>
+        </div>
+        <div class="about-copy">
+          <p class="eyebrow">About</p>
+          <h2 id="about-title">Gavrilo Mumovic and Rashtan Soft</h2>
+          <p>Rashtan Soft is the business behind my work. I am Gavrilo Mumovic, a hands-on software engineer who works across backend systems, cloud infrastructure and software products.</p>
+          <p>My experience includes industrial systems, game infrastructure, payment work inside a mature platform and the work of building my own product. I focus on understanding the existing context before making technical decisions.</p>
+          <a class="text-link" href="/about/">Read more about my experience</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-layout">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-title">Have a project in mind, or a system that needs attention?</h2>
+          <p class="section-copy">Tell me a little about the work and what kind of help you need.</p>
+          <div class="contact-details">
+            <div class="contact-detail">
+              <span>Email</span>
+              <a href="mailto:admin@rashtan-soft.com">admin@rashtan-soft.com</a>
+            </div>
+            <div class="contact-detail">
+              <span>Prefer a call?</span>
+              <a href="https://calendly.com/gavrilo-mumovic/30min" target="_blank" rel="noopener noreferrer">Choose a time that works</a>
+            </div>
+            <div class="contact-detail">
+              <span>Location</span>
+              <span>Trebinje, Bosnia and Herzegovina</span>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" data-contact-form action="https://formspree.io/f/xnjbjqgq" method="post" aria-busy="false">
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="company">Company <span class="field__optional">optional</span></label>
+            <input id="company" name="company" type="text" autocomplete="organization">
+          </div>
+          <div class="field">
+            <label for="message">What do you need help with?</label>
+            <textarea id="message" name="message" autocomplete="off" required placeholder="A short description of the work, system or question is enough."></textarea>
+          </div>
+          <div class="field-honeypot" aria-hidden="true">
+            <label for="website">Website</label>
+            <input id="website" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="form-actions">
+            <button class="button" type="submit">Send message</button>
+            <p class="form-note" id="form-note">Or email directly if you prefer.</p>
+          </div>
+          <div class="form-status" id="form-status" data-form-status role="status" aria-live="polite" aria-atomic="true" hidden></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="/" aria-label="Rashtan Soft home">
+            <img class="brand__mark" src="/images/logo-dark.png" width="40" height="40" alt="">
+            <span class="brand__name">Rashtan Soft</span>
           </a>
-          <div class="hidden md:flex space-x-8">
-            <a href="#about" class="text-gray-300 hover:text-white transition-colors">About</a>
-            <a href="#services" class="text-gray-300 hover:text-white transition-colors">Services</a>
-            <a href="#portfolio" class="text-gray-300 hover:text-white transition-colors">Portfolio</a>
-            <a href="#testimonials" class="text-gray-300 hover:text-white transition-colors">Testimonials</a>
-            <a href="#contact" class="text-gray-300 hover:text-white transition-colors">Contact</a>
-          </div>
-          <div class="hidden md:block">
-            <a href="#contact"
-              class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg transition-colors text-sm font-semibold">Get
-              Started</a>
-          </div>
-          <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-white" aria-label="Toggle menu">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          </button>
+          <p class="footer-copy">Hands-on software engineering from backend systems to production.</p>
         </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="#portfolio">Work</a>
+          <a href="#services">How I help</a>
+          <a href="/about/">About</a>
+          <a href="#contact">Contact</a>
+          <a href="/privacy/">Privacy</a>
+        </nav>
       </div>
-      <div id="mobile-menu" class="hidden md:hidden bg-gray-800 border-t border-gray-700">
-        <div class="px-4 py-4 space-y-3">
-          <a href="#about" class="block text-gray-300 hover:text-white transition-colors">About</a>
-          <a href="#services" class="block text-gray-300 hover:text-white transition-colors">Services</a>
-          <a href="#portfolio" class="block text-gray-300 hover:text-white transition-colors">Portfolio</a>
-          <a href="#testimonials" class="block text-gray-300 hover:text-white transition-colors">Testimonials</a>
-          <a href="#contact" class="block text-gray-300 hover:text-white transition-colors">Contact</a>
-          <a href="#contact"
-            class="block bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg text-center transition-colors font-semibold">Get
-            Started</a>
-        </div>
+      <div class="footer-bottom">
+        <span>© <span data-current-year>2026</span> Rashtan Soft</span>
+        <span><a href="https://www.linkedin.com/in/gavrilo-mumovic/" target="_blank" rel="noopener noreferrer">LinkedIn</a> · <a href="https://github.com/gajo357" target="_blank" rel="noopener noreferrer">GitHub</a></span>
       </div>
-    </nav>
+    </div>
+  </footer>
 
-    <main class="grow">
-
-      <!-- ========== HERO ========== -->
-      <section id="home">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 relative">
-          <div class="relative pt-32 pb-10 md:pt-28 md:pb-16">
-            <div class="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-              <h1 class="h1 mb-4" data-aos="fade-up">Transforming Visions into Reality with Cutting-Edge Tech</h1>
-              <p class="text-xl text-gray-400 mb-8" data-aos="fade-up" data-aos-delay="200">Specializing in C#, React,
-                and Node.js, I craft custom solutions and
-                pioneer innovative products to set your business apart in the digital world. With 10+ years of
-                experience and Top 3% Toptal verification, you get senior-level expertise from day one.</p>
-              <!-- Toptal Badge -->
-              <div class="flex justify-center mb-8" data-aos="fade-up" data-aos-delay="300">
-                <div class="toptal-badge">
-                  <div class="badge-outer">
-                    <div class="badge-inner">
-                      <svg width="64" viewBox="0 0 60 17" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="m20.85 6.38 6.06-.89 2.72-5.49 2.71 5.49 6.06.89-4.39 4.28 1.04 6.03-5.42-2.85-5.43 2.85 1.04-6.03zm33.06 7.17 1.85-.27.82-1.67.83 1.67 1.84.27-1.33 1.31.31 1.83-1.65-.87-1.66.87.32-1.83zm-3.38-3.01-3.61-.52-1.61-3.26-1.62 3.26-3.6.52 2.6 2.55-.61 3.59 3.23-1.69 3.21 1.69-.61-3.59zm-45.19 3.01-1.85-.27-.82-1.67-.83 1.67-1.84.27 1.33 1.31-.31 1.83 1.65-.87 1.65.87-.31-1.83zm3.38-3.01 3.61-.52 1.61-3.26 1.61 3.26 3.61.52-2.6 2.55.61 3.59-3.23-1.69-3.22 1.69.62-3.59z"
-                          fill="#00c3ff" />
-                      </svg>
-                      <h3 class="badge-title">TOP 3% TALENT</h3>
-                      <div class="badge-divider"></div>
-                      <span class="badge-subtitle">Vetted by</span>
-                      <svg style="width:100px" viewBox="0 0 108 30" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                          d="M8.11 0L14.82 6.7C14.87 6.75 14.91 6.8 14.97 6.85L20.82 12.7L11.31 22.16L15.66 26.52L12.75 29.41L6.09 22.75C6.01 22.68 5.93 22.6 5.85 22.52L0 16.68L9.48 7.25L5.16 2.94L8.11 0ZM12.36 10.5C12.27 10.48 12.18 10.48 12.1 10.5C12.01 10.53 11.94 10.57 11.78 10.72L6.37 16.11C6.21 16.27 6.17 16.34 6.15 16.42C6.12 16.51 6.12 16.6 6.15 16.68C6.17 16.77 6.22 16.85 6.37 17L8.09 18.72C8.24 18.87 8.31 18.91 8.4 18.94C8.49 18.96 8.57 18.96 8.66 18.94C8.75 18.91 8.82 18.87 8.97 18.72L14.38 13.33C14.54 13.18 14.58 13.1 14.61 13.02C14.63 12.93 14.63 12.85 14.61 12.76C14.59 12.67 14.54 12.6 14.39 12.45L12.67 10.73C12.52 10.57 12.44 10.53 12.36 10.5Z"
-                          fill="#204ecf" />
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                          d="M62.65 7.76C64.76 7.76 66.56 8.58 67.99 10.16C69.45 11.69 70.18 13.8 70.17 16.42C70.17 18.98 69.42 21.22 67.93 22.8C66.46 24.37 64.59 25.17 62.35 25.17C60.42 25.16 58.67 24.47 57.51 23.28L57.35 23.11L57.34 29.86L53.52 29.85V29.57L53.56 7.96L57.36 7.96L57.35 10.6C58.6 9.19 60.61 7.76 62.65 7.76ZM87.1 7.82C89.28 7.82 90.78 8.31 91.94 9.26C93.05 10.18 93.64 11.82 93.69 13.55L93.69 13.81L93.67 24.95H89.8L89.8 24.49C89.8 24.01 89.8 23.52 89.8 23.02C88.68 24.57 87.12 25.32 85.04 25.32C83.39 25.32 81.99 24.82 80.97 23.9C79.94 22.95 79.39 21.66 79.39 20.16C79.41 17.33 81.41 15.37 84.91 14.76L85.18 14.71L89.82 13.98V13.61C89.82 12.83 89.59 11.89 89.13 11.5C88.66 11.1 88.09 10.77 87.1 10.77C84.37 10.77 83.81 12.78 83.78 13.79L83.78 13.88L80.36 13.92C80.36 12.43 81.05 10.5 82.44 9.29C83.56 8.32 85.19 7.87 86.77 7.82L87.07 7.82H87.1ZM72.12 3.46L75.93 3.46L75.92 8.02L79.45 8.02L79.45 11.2L75.91 11.19L75.9 19.73C75.9 20.67 76.09 21.29 76.5 21.58C76.93 21.88 77.8 21.6 77.8 21.6L78.14 24.92C78.14 24.92 76.94 25.23 76.18 25.23C75.19 25.23 74.34 24.98 73.69 24.48C72.63 23.68 72.09 22.28 72.09 20.31L72.11 11.19L68.92 8L72.12 8.01L72.12 3.46ZM49.66 10.26C50.76 11.39 52.07 13.4 52.06 16.52C52.05 19.63 50.74 21.63 49.65 22.76C48.15 24.3 46.11 25.18 44.06 25.18C43.98 25.18 43.9 25.18 43.81 25.17C41.62 25.16 39.68 24.38 38.06 22.84C36.43 21.29 35.6 19.16 35.6 16.48C35.6 13.8 36.44 11.66 38.07 10.12C39.69 8.59 41.62 7.82 43.82 7.82C45.99 7.75 48.11 8.65 49.66 10.26ZM40.85 3.22V6.99L33.49 7L33.51 24.97L29.54 24.96V24.62L29.57 6.99H22.06L22.07 3.22H40.85ZM95.53 3.47L98.95 3.48V3.57L98.92 24.95L95.5 24.94V24.84L95.53 3.47ZM89.82 17.05L86.01 17.69C84.15 18.01 83.29 18.73 83.28 19.99C83.27 21.14 84.09 21.91 85.37 21.98L85.53 21.98H85.55C87.99 21.98 89.72 20.08 89.81 17.31L89.82 17.09V17.05ZM43.8 11.21C42.52 11.21 41.41 11.7 40.51 12.68C39.63 13.64 39.18 14.92 39.18 16.49C39.18 18.07 39.63 19.35 40.51 20.31C41.4 21.29 42.51 21.78 43.79 21.79C45.09 21.79 46.21 21.3 47.1 20.32C48 19.34 48.45 18.06 48.46 16.51C48.47 14.95 48.01 13.67 47.11 12.69C46.21 11.71 45.1 11.21 43.8 11.21ZM61.74 11.33H61.72C60.44 11.33 59.38 11.79 58.48 12.76C57.58 13.7 57.13 14.92 57.12 16.39C57.12 17.88 57.57 19.22 58.47 20.2C59.39 21.14 60.45 21.61 61.72 21.61C63.01 21.61 64.1 21.13 64.97 20.2C65.88 19.23 66.32 17.9 66.33 16.41C66.33 14.93 65.87 13.71 64.99 12.78C64.12 11.82 63.03 11.33 61.74 11.33Z"
-                          fill="#262d3d" />
-                      </svg>
-                      <a class="badge-cta" href="https://www.toptal.com/developers/resume/gavrilo-mumovic#qK3P5E"
-                        target="_blank" rel="noopener noreferrer">Hire Me on Toptal</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Secondary CTA -->
-              <div class="flex justify-center" data-aos="fade-up" data-aos-delay="400">
-                <a href="https://calendly.com/gavrilo-mumovic/30min" target="_blank" rel="noopener noreferrer"
-                  class="border-2 border-gray-400 hover:bg-white hover:text-gray-900 text-gray-200 px-8 py-3 rounded-lg font-semibold transition-colors inline-block">Schedule
-                  Consultation</a>
-              </div>
-            </div>
-
-            <!-- Modal Video -->
-            <div>
-              <div class="relative flex justify-center items-center" data-aos="fade-up" data-aos-delay="200">
-                <img src="images/hero-image-01.jpg" width="1024" height="576" alt="Modal video thumbnail" />
-                <button class="absolute group" onclick="openVideoModal()" aria-label="Watch the video">
-                  <svg class="w-16 h-16 sm:w-20 sm:h-20 hover:opacity-75 transition duration-150 ease-in-out"
-                    viewBox="0 0 88 88" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                      <linearGradient x1="78.169%" y1="9.507%" x2="24.434%" y2="90.469%" id="play-btn">
-                        <stop stop-color="#EBF1F5" stop-opacity=".8" offset="0%" />
-                        <stop stop-color="#EBF1F5" offset="100%" />
-                      </linearGradient>
-                    </defs>
-                    <circle fill="url(#play-btn)" cx="44" cy="44" r="44" />
-                    <path class="fill-current text-purple-600"
-                      d="M52 44a.999.999 0 00-.427-.82l-10-7A1 1 0 0040 37V51a.999.999 0 001.573.82l10-7A.995.995 0 0052 44V44c0 .001 0 .001 0 0z" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div id="videoBackdrop" class="video-modal-backdrop" onclick="closeVideoModal()"></div>
-            <div id="videoContainer" class="video-modal-container" onclick="closeVideoModal()">
-              <div class="max-w-6xl mx-auto h-full flex items-center" onclick="event.stopPropagation()">
-                <div class="w-full max-h-full aspect-video bg-black overflow-hidden">
-                  <video id="modalVideo" width="1920" height="1080" loop controls>
-                    <source src="videos/video.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ========== TRUST SIGNALS ========== -->
-      <section class="border-t border-gray-800 bg-gray-800/50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10">
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center" data-aos="fade-up">
-            <div>
-              <div class="text-4xl md:text-5xl font-bold text-purple-500 mb-2">50+</div>
-              <p class="text-gray-400 text-sm">Companies Served Worldwide</p>
-            </div>
-            <div>
-              <div class="text-4xl md:text-5xl font-bold text-purple-500 mb-2">100+</div>
-              <p class="text-gray-400 text-sm">Successful Projects Delivered</p>
-            </div>
-            <div>
-              <div class="text-4xl md:text-5xl font-bold text-purple-500 mb-2">10+</div>
-              <p class="text-gray-400 text-sm">Years of Proven Excellence</p>
-            </div>
-            <div>
-              <div class="text-4xl md:text-5xl font-bold text-purple-500 mb-2">Top 3%</div>
-              <p class="text-gray-400 text-sm">Toptal Verified Developer</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ========== ABOUT ========== -->
-      <section id="about" class="py-12 md:py-20 border-t border-gray-800">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-          <div class="md:grid md:grid-cols-2 gap-12 items-center">
-            <div data-aos="fade-right">
-              <div class="bg-gray-800 rounded-lg p-8 border border-gray-700">
-                <h3 class="text-3xl font-bold text-white mb-2">Gavrilo Mumovic</h3>
-                <p class="text-xl text-purple-400 mb-6">Founder &amp; Lead Software Engineer</p>
-                <div class="grid grid-cols-2 gap-6 mb-8">
-                  <div class="text-center">
-                    <div class="text-4xl font-bold text-purple-500">10+</div>
-                    <div class="text-gray-400 mt-2">Years Experience</div>
-                  </div>
-                  <div class="text-center">
-                    <div class="text-4xl font-bold text-purple-500">5+</div>
-                    <div class="text-gray-400 mt-2">Countries Served</div>
-                  </div>
-                  <div class="text-center">
-                    <div class="text-4xl font-bold text-purple-500">Top 3%</div>
-                    <div class="text-gray-400 mt-2">Toptal Talent</div>
-                  </div>
-                  <div class="text-center">
-                    <div class="text-4xl font-bold text-purple-500">100%</div>
-                    <div class="text-gray-400 mt-2">Client Satisfaction</div>
-                  </div>
-                </div>
-                <div class="flex space-x-4">
-                  <a href="https://www.linkedin.com/in/gavrilo-mumovic/" target="_blank"
-                    class="text-gray-400 hover:text-purple-500 transition-colors" aria-label="LinkedIn"><svg
-                      class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                      <path
-                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                    </svg></a>
-                  <a href="https://github.com/gajo357" target="_blank"
-                    class="text-gray-400 hover:text-purple-500 transition-colors" aria-label="GitHub"><svg
-                      class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                      <path
-                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                    </svg></a>
-                  <a href="https://www.toptal.com/developers/resume/gavrilo-mumovic" target="_blank"
-                    class="text-gray-400 hover:text-purple-500 transition-colors" aria-label="Toptal"><svg
-                      class="w-6 h-6 fill-current" viewBox="0 0 24 32">
-                      <path
-                        d="M8.11 0L14.82 6.7C14.87 6.75 14.91 6.8 14.97 6.85L20.82 12.7L11.31 22.16L15.66 26.52L12.75 29.41L6.09 22.75C6.01 22.68 5.93 22.6 5.85 22.52L0 16.68L9.48 7.25L5.16 2.94L8.11 0ZM12.36 10.5C12.27 10.48 12.18 10.48 12.1 10.5C12.01 10.53 11.94 10.57 11.78 10.72L6.37 16.11C6.21 16.27 6.17 16.34 6.15 16.42C6.12 16.51 6.12 16.6 6.15 16.68C6.17 16.77 6.22 16.85 6.37 17L8.09 18.72C8.24 18.87 8.31 18.91 8.4 18.94C8.49 18.96 8.57 18.96 8.66 18.94C8.75 18.91 8.82 18.87 8.97 18.72L14.38 13.33C14.54 13.18 14.58 13.1 14.61 13.02C14.63 12.93 14.63 12.85 14.61 12.76C14.59 12.67 14.54 12.6 14.39 12.45L12.67 10.73C12.52 10.57 12.44 10.53 12.36 10.5Z" />
-                    </svg></a>
-                </div>
-              </div>
-            </div>
-            <div data-aos="fade-left">
-              <h2 class="h2 mb-6">About Rashtan Soft</h2>
-              <div class="space-y-4 text-gray-400 text-lg">
-                <p>Founded by Gavrilo Mumovic, a senior software engineer with over 10 years of experience, Rashtan Soft
-                  delivers enterprise-grade software solutions with a boutique approach. As a verified Top 3% Toptal
-                  developer, I bring the expertise of a large agency with the personal attention and flexibility of
-                  working directly with the founder.</p>
-                <p>My journey in software engineering spans from building complex industrial systems at Calsep A/S to
-                  architecting game infrastructure at Illuvium, with successful projects for companies like StubHub and
-                  healthcare platforms.</p>
-                <p>Whether you need a robust back-end system, a modern web application, or cloud infrastructure that
-                  scales, you get direct access to senior-level expertise without the overhead of a large agency.</p>
-              </div>
-              <div class="mt-8"><a href="#contact"
-                  class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors inline-block">Let's
-                  Discuss Your Project</a></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ========== SERVICES ========== -->
-      <section id="services">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-          <div class="py-12 md:py-20 border-t border-gray-800">
-            <div class="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-              <h2 class="h2 mb-4">Empowering Innovation with Core Capabilities</h2>
-              <p class="text-xl text-gray-400">At the heart of my work lies a commitment to not just meet, but exceed
-                the technological frontier. Here's how I stand out.</p>
-            </div>
-            <div
-              class="max-w-sm mx-auto grid gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-16 items-start md:max-w-2xl lg:max-w-none"
-              data-aos-id-blocks>
-              <div class="relative flex flex-col items-center" data-aos="fade-up"
-                data-aos-anchor="[data-aos-id-blocks]">
-                <svg class="w-16 h-16 mb-4" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                  <rect class="fill-current text-purple-600" width="64" height="64" rx="32" />
-                  <path class="stroke-current text-purple-100"
-                    d="M30 39.313l-4.18 2.197L27 34.628l-5-4.874 6.91-1.004L32 22.49l3.09 6.26L42 29.754l-3 2.924"
-                    stroke-linecap="square" stroke-width="2" fill="none" fill-rule="evenodd" />
-                  <path class="stroke-current text-purple-300" d="M43 42h-9M43 37h-9" stroke-linecap="square"
-                    stroke-width="2" />
-                </svg>
-                <h4 class="h4 mb-2">Mastering Complexity with C#</h4>
-                <p class="text-lg text-gray-400 text-center">Harness the power of C# for enterprise-grade software
-                  solutions with 14 years of proven expertise. From AWS Lambda serverless architectures to complex
-                  desktop applications, I build sophisticated systems that handle deep business logic and
-                  high-performance requirements.</p>
-              </div>
-              <div class="relative flex flex-col items-center" data-aos="fade-up" data-aos-delay="100"
-                data-aos-anchor="[data-aos-id-blocks]">
-                <svg class="w-16 h-16 mb-4" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                  <circle class="fill-current text-purple-600" cx="32" cy="32" r="32" />
-                  <path class="stroke-current text-purple-100" stroke-width="2" stroke-linecap="square"
-                    d="M21 23h22v18H21z" fill="none" fill-rule="evenodd" />
-                  <path class="stroke-current text-purple-300" d="M26 28h12M26 32h12M26 36h5" stroke-width="2"
-                    stroke-linecap="square" />
-                </svg>
-                <h4 class="h4 mb-2">Dynamic Interfaces with React</h4>
-                <p class="text-lg text-gray-400 text-center">Elevate the user experience with React and TypeScript to
-                  create responsive, interactive interfaces that users love. With 6 years of React expertise, I build
-                  progressive web applications and modern SPAs that combine beautiful design with optimal performance.
-                </p>
-              </div>
-              <div class="relative flex flex-col items-center" data-aos="fade-up" data-aos-delay="200"
-                data-aos-anchor="[data-aos-id-blocks]">
-                <svg class="w-16 h-16 mb-4" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                  <rect class="fill-current text-purple-600" width="64" height="64" rx="32" />
-                  <g transform="translate(21 21)" stroke-linecap="square" stroke-width="2" fill="none"
-                    fill-rule="evenodd">
-                    <ellipse class="stroke-current text-purple-300" cx="11" cy="11" rx="5.5" ry="11" />
-                    <path class="stroke-current text-purple-100" d="M11 0v22M0 11h22" />
-                    <circle class="stroke-current text-purple-100" cx="11" cy="11" r="11" />
-                  </g>
-                </svg>
-                <h4 class="h4 mb-2">Efficiency at Scale with Node.js</h4>
-                <p class="text-lg text-gray-400 text-center">Leverage Node.js for lightweight, scalable network
-                  applications and microservices. I build REST APIs, real-time systems with WebSockets, and serverless
-                  functions that handle high throughput and concurrent connections efficiently.</p>
-              </div>
-              <div class="relative flex flex-col items-center" data-aos="fade-up" data-aos-delay="300"
-                data-aos-anchor="[data-aos-id-blocks]">
-                <svg class="w-16 h-16 mb-4" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                  <rect class="fill-current text-purple-600" width="64" height="64" rx="32" />
-                  <g transform="translate(22 21)" stroke-linecap="square" stroke-width="2" fill="none"
-                    fill-rule="evenodd">
-                    <path class="stroke-current text-purple-100"
-                      d="M17 22v-6.3a8.97 8.97 0 003-6.569A9.1 9.1 0 0011.262 0 9 9 0 002 9v1l-2 5 2 1v4a2 2 0 002 2h4a5 5 0 005-5v-5" />
-                    <circle class="stroke-current text-purple-300" cx="13" cy="9" r="3" />
-                  </g>
-                </svg>
-                <h4 class="h4 mb-2">Flexibility and Speed with Agile</h4>
-                <p class="text-lg text-gray-400 text-center">Adopting an Agile approach with clear communication and
-                  iterative delivery, your project stays flexible to changing requirements while maintaining momentum.
-                  Projects are delivered in sprints, allowing you to see progress weekly.</p>
-              </div>
-              <div class="relative flex flex-col items-center" data-aos="fade-up" data-aos-delay="400"
-                data-aos-anchor="[data-aos-id-blocks]">
-                <svg class="w-16 h-16 mb-4" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                  <rect class="fill-current text-purple-600" width="64" height="64" rx="32" />
-                  <g stroke-linecap="square" stroke-width="2" fill="none" fill-rule="evenodd">
-                    <path class="stroke-current text-purple-100"
-                      d="M29 42h10.229a2 2 0 001.912-1.412l2.769-9A2 2 0 0042 29h-7v-4c0-2.373-1.251-3.494-2.764-3.86a1.006 1.006 0 00-1.236.979V26l-5 6" />
-                    <path class="stroke-current text-purple-300" d="M22 30h4v12h-4z" />
-                  </g>
-                </svg>
-                <h4 class="h4 mb-2">Tailor-Made Solutions</h4>
-                <p class="text-lg text-gray-400 text-center">From initial consultation to production deployment and
-                  beyond, I provide end-to-end custom development services. You receive a complete solution including
-                  documentation, CI/CD pipelines, and post-launch support.</p>
-              </div>
-              <div class="relative flex flex-col items-center" data-aos="fade-up" data-aos-delay="500"
-                data-aos-anchor="[data-aos-id-blocks]">
-                <svg class="w-16 h-16 mb-4" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                  <rect class="fill-current text-purple-600" width="64" height="64" rx="32" />
-                  <g transform="translate(21 22)" stroke-linecap="square" stroke-width="2" fill="none"
-                    fill-rule="evenodd">
-                    <path class="stroke-current text-purple-300"
-                      d="M17 2V0M19.121 2.879l1.415-1.415M20 5h2M19.121 7.121l1.415 1.415M17 8v2M14.879 7.121l-1.415 1.415M14 5h-2M14.879 2.879l-1.415-1.415" />
-                    <circle class="stroke-current text-purple-300" cx="17" cy="5" r="3" />
-                    <path class="stroke-current text-purple-100"
-                      d="M8.86 1.18C3.8 1.988 0 5.6 0 10c0 5 4.9 9 11 9a10.55 10.55 0 003.1-.4L20 21l-.6-5.2a9.125 9.125 0 001.991-2.948" />
-                  </g>
-                </svg>
-                <h4 class="h4 mb-2">Driving Future Trends</h4>
-                <p class="text-lg text-gray-400 text-center">Beyond client work, I develop and maintain production
-                  software products serving users across multiple countries. The experience from managing complete
-                  product lifecycles translates directly into better client solutions.</p>
-              </div>
-            </div>
-
-            <!-- Detailed Service Descriptions -->
-            <div class="mt-20 border-t border-gray-800 pt-16">
-              <div class="max-w-3xl mx-auto text-center pb-12">
-                <h3 class="h3 mb-4">What We Deliver</h3>
-                <p class="text-xl text-gray-400">End-to-end development services tailored to your business needs</p>
-              </div>
-              <div class="grid md:grid-cols-2 gap-8">
-                <!-- Full-Stack Development -->
-                <div class="bg-gray-800 rounded-lg p-8 border border-gray-700 hover:border-purple-500 transition-colors"
-                  data-aos="fade-up">
-                  <div class="flex items-center mb-4">
-                    <div class="bg-purple-600 rounded-lg p-3 mr-4">
-                      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                      </svg>
-                    </div>
-                    <h4 class="text-xl font-bold text-white">Full-Stack Development</h4>
-                  </div>
-                  <p class="text-gray-400 mb-4">Complete web and mobile application development from database design to
-                    polished user interfaces. I build production-ready systems using modern frameworks and best
-                    practices.</p>
-                  <ul class="text-sm text-gray-400 space-y-2">
-                    <li class="flex items-start"><svg class="w-4 h-4 text-purple-500 mr-2 mt-0.5 shrink-0"
-                        fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd" />
-                      </svg>React/Next.js frontends with TypeScript</li>
-                    <li class="flex items-start"><svg class="w-4 h-4 text-purple-500 mr-2 mt-0.5 shrink-0"
-                        fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd" />
-                      </svg>.NET Core / Node.js back-end APIs</li>
-                    <li class="flex items-start"><svg class="w-4 h-4 text-purple-500 mr-2 mt-0.5 shrink-0"
-                        fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd" />
-                      </svg>SQL Server, PostgreSQL, DynamoDB databases</li>
-                    <li class="flex items-start"><svg class="w-4 h-4 text-purple-500 mr-2 mt-0.5 shrink-0"
-                        fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd" />
-                      </svg>CI/CD pipelines &amp; automated testing</li>
-                  </ul>
-                </div>
-                <!-- Cloud Architecture -->
-                <div class="bg-gray-800 rounded-lg p-8 border border-gray-700 hover:border-purple-500 transition-colors"
-                  data-aos="fade-up" data-aos-delay="100">
-                  <div class="flex items-center mb-4">
-                    <div class="bg-purple-600 rounded-lg p-3 mr-4">
-                      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-                      </svg>
-                    </div>
-                    <h4 class="text-xl font-bold text-white">Cloud Architecture</h4>
-                  </div>
-                  <p class="text-gray-400 mb-4">Design and implement scalable cloud infrastructure on AWS and Azure.
-                    From serverless functions to containerized microservices, I build architectures that grow with your
-                    business.</p>
-                  <ul class="text-sm text-gray-400 space-y-2">
-                    <li class="flex items-start"><svg class="w-4 h-4 text-purple-500 mr-2 mt-0.5 shrink-0"
-                        fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd" />
-                      </svg>AWS Lambda, ECS, S3, CloudFront</li>
-                    <li class="flex items-start"><svg class="w-4 h-4 text-purple-500 mr-2 mt-0.5 shrink-0"
-                        fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd" />
-                      </svg>Azure App Service, Functions, Static Web Apps</li>
-                    <li class="flex items-start"><svg class="w-4 h-4 text-purple-500 mr-2 mt-0.5 shrink-0"
-                        fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd" />
-                      </svg>Docker &amp; Kubernetes orchestration</li>
-                    <li class="flex items-start"><svg class="w-4 h-4 text-purple-500 mr-2 mt-0.5 shrink-0"
-                        fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd" />
-                      </svg>Terraform infrastructure as code</li>
-                  </ul>
-                </div>
-                <!-- Performance Optimization -->
-                <div class="bg-gray-800 rounded-lg p-8 border border-gray-700 hover:border-purple-500 transition-colors"
-                  data-aos="fade-up" data-aos-delay="200">
-                  <div class="flex items-center mb-4">
-                    <div class="bg-purple-600 rounded-lg p-3 mr-4">
-                      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M13 10V3L4 14h7v7l9-11h-7z" />
-                      </svg>
-                    </div>
-                    <h4 class="text-xl font-bold text-white">Performance Optimization</h4>
-                  </div>
-                  <p class="text-gray-400 mb-4">Identify and eliminate bottlenecks in your existing systems. I've
-                    achieved results like reducing 5-hour processes to 20 seconds and cutting query times by 60%.</p>
-                  <ul class="text-sm text-gray-400 space-y-2">
-                    <li class="flex items-start"><svg class="w-4 h-4 text-purple-500 mr-2 mt-0.5 shrink-0"
-                        fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd" />
-                      </svg>Database query optimization &amp; indexing</li>
-                    <li class="flex items-start"><svg class="w-4 h-4 text-purple-500 mr-2 mt-0.5 shrink-0"
-                        fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd" />
-                      </svg>Caching strategies &amp; CDN configuration</li>
-                    <li class="flex items-start"><svg class="w-4 h-4 text-purple-500 mr-2 mt-0.5 shrink-0"
-                        fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd" />
-                      </svg>Memory &amp; CPU profiling</li>
-                    <li class="flex items-start"><svg class="w-4 h-4 text-purple-500 mr-2 mt-0.5 shrink-0"
-                        fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd" />
-                      </svg>Load testing &amp; scalability planning</li>
-                  </ul>
-                </div>
-                <!-- Legacy Modernization -->
-                <div class="bg-gray-800 rounded-lg p-8 border border-gray-700 hover:border-purple-500 transition-colors"
-                  data-aos="fade-up" data-aos-delay="300">
-                  <div class="flex items-center mb-4">
-                    <div class="bg-purple-600 rounded-lg p-3 mr-4">
-                      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                      </svg>
-                    </div>
-                    <h4 class="text-xl font-bold text-white">Legacy Modernization</h4>
-                  </div>
-                  <p class="text-gray-400 mb-4">Breathe new life into aging systems. I migrate legacy codebases to
-                    modern frameworks while preserving business logic and minimizing disruption to operations.</p>
-                  <ul class="text-sm text-gray-400 space-y-2">
-                    <li class="flex items-start"><svg class="w-4 h-4 text-purple-500 mr-2 mt-0.5 shrink-0"
-                        fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd" />
-                      </svg>.NET Framework → .NET 8/9 migration</li>
-                    <li class="flex items-start"><svg class="w-4 h-4 text-purple-500 mr-2 mt-0.5 shrink-0"
-                        fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd" />
-                      </svg>Monolith to microservices decomposition</li>
-                    <li class="flex items-start"><svg class="w-4 h-4 text-purple-500 mr-2 mt-0.5 shrink-0"
-                        fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd" />
-                      </svg>On-premises to cloud migration</li>
-                    <li class="flex items-start"><svg class="w-4 h-4 text-purple-500 mr-2 mt-0.5 shrink-0"
-                        fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd" />
-                      </svg>API-first architecture redesign</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <!-- Engagement Models -->
-            <div class="mt-20 border-t border-gray-800 pt-16">
-              <div class="max-w-3xl mx-auto text-center pb-12">
-                <h3 class="h3 mb-4">Flexible Engagement Models</h3>
-                <p class="text-xl text-gray-400">Choose the model that fits your project and budget</p>
-              </div>
-              <div class="grid md:grid-cols-3 gap-8">
-                <!-- Hourly -->
-                <div
-                  class="bg-gray-800 rounded-lg p-8 border border-gray-700 text-center hover:border-purple-500 transition-colors"
-                  data-aos="fade-up">
-                  <div class="bg-purple-600/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
-                    <svg class="w-8 h-8 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <h4 class="text-xl font-bold text-white mb-2">Hourly</h4>
-                  <p class="text-purple-400 font-semibold mb-4">Pay as you go</p>
-                  <p class="text-gray-400 text-sm mb-6">Ideal for ongoing support, code reviews, consulting, or small
-                    tasks where scope is flexible.</p>
-                  <ul class="text-sm text-gray-400 space-y-2 text-left">
-                    <li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2 shrink-0" fill="currentColor"
-                        viewBox="0 0 20 20">
-                        <path fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd" />
-                      </svg>No minimum commitment</li>
-                    <li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2 shrink-0" fill="currentColor"
-                        viewBox="0 0 20 20">
-                        <path fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd" />
-                      </svg>Weekly time tracking</li>
-                    <li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2 shrink-0" fill="currentColor"
-                        viewBox="0 0 20 20">
-                        <path fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd" />
-                      </svg>Scale up or down anytime</li>
-                  </ul>
-                </div>
-                <!-- Project-Based -->
-                <div class="bg-gray-800 rounded-lg p-8 border-2 border-purple-500 text-center relative"
-                  data-aos="fade-up" data-aos-delay="100">
-                  <div
-                    class="absolute -top-3 left-1/2 -translate-x-1/2 bg-purple-600 text-white text-xs font-bold px-4 py-1 rounded-full">
-                    MOST POPULAR</div>
-                  <div class="bg-purple-600/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
-                    <svg class="w-8 h-8 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-                    </svg>
-                  </div>
-                  <h4 class="text-xl font-bold text-white mb-2">Project-Based</h4>
-                  <p class="text-purple-400 font-semibold mb-4">Fixed scope &amp; price</p>
-                  <p class="text-gray-400 text-sm mb-6">Best for well-defined projects with clear requirements,
-                    milestones, and deliverables.</p>
-                  <ul class="text-sm text-gray-400 space-y-2 text-left">
-                    <li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2 shrink-0" fill="currentColor"
-                        viewBox="0 0 20 20">
-                        <path fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd" />
-                      </svg>Defined scope &amp; timeline</li>
-                    <li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2 shrink-0" fill="currentColor"
-                        viewBox="0 0 20 20">
-                        <path fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd" />
-                      </svg>Milestone-based payments</li>
-                    <li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2 shrink-0" fill="currentColor"
-                        viewBox="0 0 20 20">
-                        <path fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd" />
-                      </svg>Predictable budget</li>
-                    <li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2 shrink-0" fill="currentColor"
-                        viewBox="0 0 20 20">
-                        <path fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd" />
-                      </svg>Post-launch support included</li>
-                  </ul>
-                </div>
-                <!-- Retainer -->
-                <div
-                  class="bg-gray-800 rounded-lg p-8 border border-gray-700 text-center hover:border-purple-500 transition-colors"
-                  data-aos="fade-up" data-aos-delay="200">
-                  <div class="bg-purple-600/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
-                    <svg class="w-8 h-8 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                    </svg>
-                  </div>
-                  <h4 class="text-xl font-bold text-white mb-2">Retainer</h4>
-                  <p class="text-purple-400 font-semibold mb-4">Dedicated monthly hours</p>
-                  <p class="text-gray-400 text-sm mb-6">Perfect for long-term partnerships requiring consistent
-                    development capacity and priority access.</p>
-                  <ul class="text-sm text-gray-400 space-y-2 text-left">
-                    <li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2 shrink-0" fill="currentColor"
-                        viewBox="0 0 20 20">
-                        <path fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd" />
-                      </svg>Reserved monthly capacity</li>
-                    <li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2 shrink-0" fill="currentColor"
-                        viewBox="0 0 20 20">
-                        <path fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd" />
-                      </svg>Priority response times</li>
-                    <li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2 shrink-0" fill="currentColor"
-                        viewBox="0 0 20 20">
-                        <path fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd" />
-                      </svg>Discounted rates</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <!-- Process Overview -->
-            <div class="mt-20 border-t border-gray-800 pt-16">
-              <div class="max-w-3xl mx-auto text-center pb-12">
-                <h3 class="h3 mb-4">How I Work With You</h3>
-                <p class="text-xl text-gray-400">A proven 5-step process to bring your project from idea to production
-                </p>
-              </div>
-              <div class="relative">
-                <!-- Timeline line (hidden on mobile) -->
-                <div class="hidden md:block absolute top-8 left-0 right-0 h-0.5 bg-gray-700" style="left:10%;right:10%">
-                </div>
-                <div class="grid md:grid-cols-5 gap-8 md:gap-4">
-                  <!-- Step 1: Discovery -->
-                  <div class="text-center relative" data-aos="fade-up">
-                    <div
-                      class="bg-purple-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 relative z-10 border-4 border-gray-900">
-                      <span class="text-white font-bold text-lg">1</span>
-                    </div>
-                    <h4 class="text-lg font-bold text-white mb-2">Discovery</h4>
-                    <p class="text-gray-400 text-sm">Understand your goals, requirements, and technical constraints
-                      through detailed consultation.</p>
-                  </div>
-                  <!-- Step 2: Design -->
-                  <div class="text-center relative" data-aos="fade-up" data-aos-delay="100">
-                    <div
-                      class="bg-purple-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 relative z-10 border-4 border-gray-900">
-                      <span class="text-white font-bold text-lg">2</span>
-                    </div>
-                    <h4 class="text-lg font-bold text-white mb-2">Design</h4>
-                    <p class="text-gray-400 text-sm">Architect the solution, create technical specs, and define
-                      milestones and deliverables.</p>
-                  </div>
-                  <!-- Step 3: Development -->
-                  <div class="text-center relative" data-aos="fade-up" data-aos-delay="200">
-                    <div
-                      class="bg-purple-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 relative z-10 border-4 border-gray-900">
-                      <span class="text-white font-bold text-lg">3</span>
-                    </div>
-                    <h4 class="text-lg font-bold text-white mb-2">Development</h4>
-                    <p class="text-gray-400 text-sm">Build iteratively in sprints with weekly demos, code reviews, and
-                      progress updates.</p>
-                  </div>
-                  <!-- Step 4: Deployment -->
-                  <div class="text-center relative" data-aos="fade-up" data-aos-delay="300">
-                    <div
-                      class="bg-purple-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 relative z-10 border-4 border-gray-900">
-                      <span class="text-white font-bold text-lg">4</span>
-                    </div>
-                    <h4 class="text-lg font-bold text-white mb-2">Deployment</h4>
-                    <p class="text-gray-400 text-sm">Launch with CI/CD pipelines, monitoring, and zero-downtime
-                      deployment strategies.</p>
-                  </div>
-                  <!-- Step 5: Support -->
-                  <div class="text-center relative" data-aos="fade-up" data-aos-delay="400">
-                    <div
-                      class="bg-purple-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 relative z-10 border-4 border-gray-900">
-                      <span class="text-white font-bold text-lg">5</span>
-                    </div>
-                    <h4 class="text-lg font-bold text-white mb-2">Support</h4>
-                    <p class="text-gray-400 text-sm">Ongoing maintenance, performance monitoring, bug fixes, and feature
-                      enhancements.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="text-center mt-12">
-                <a href="#contact"
-                  class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors inline-block">Start
-                  Your Project</a>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- ========== PORTFOLIO ========== -->
-      <section id="portfolio" class="border-t border-gray-800">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-          <div class="py-12 md:py-20">
-            <div class="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-              <h2 class="h2 mb-4">Featured Projects</h2>
-              <p class="text-xl text-gray-400">Real-world solutions delivering measurable results</p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="fade-up">
-              <!-- Dental Lab Guru -->
-              <div
-                class="bg-gray-800 rounded-lg overflow-hidden border border-gray-700 hover:border-purple-500 transition-colors p-6">
-                <h3 class="text-xl font-bold text-white mb-3">Dental Lab Guru</h3>
-                <p class="text-gray-400 mb-4 text-sm">Comprehensive dental laboratory management system serving
-                  laboratories across 5+ countries.</p>
-                <ul class="text-sm text-gray-400 space-y-1 mb-4">
-                  <li>• Used by labs in 5+ countries</li>
-                  <li>• Real-time SMS &amp; email notifications</li>
-                  <li>• Stripe &amp; PayPal payments</li>
-                  <li>• Multi-language support</li>
-                </ul>
-                <div class="flex flex-wrap gap-2"><span
-                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">React</span><span
-                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">.NET Core</span><span
-                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">Azure</span><span
-                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">Docker</span></div>
-              </div>
-              <!-- Illuvium -->
-              <div
-                class="bg-gray-800 rounded-lg overflow-hidden border border-gray-700 hover:border-purple-500 transition-colors p-6">
-                <h3 class="text-xl font-bold text-white mb-3">Illuvium Infrastructure</h3>
-                <p class="text-gray-400 mb-4 text-sm">Architected complete back-end infrastructure for flagship game
-                  titles, handling thousands of concurrent users.</p>
-                <ul class="text-sm text-gray-400 space-y-1 mb-4">
-                  <li>• Built from ground up on AWS Lambda</li>
-                  <li>• Upgraded to .NET 9 for performance</li>
-                  <li>• Reduced cold start times significantly</li>
-                  <li>• Designed MMO game services</li>
-                </ul>
-                <div class="flex flex-wrap gap-2"><span
-                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">C#</span><span
-                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">AWS Lambda</span><span
-                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">.NET 9</span><span
-                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">Terraform</span></div>
-              </div>
-              <!-- MedProctor -->
-              <div
-                class="bg-gray-800 rounded-lg overflow-hidden border border-gray-700 hover:border-purple-500 transition-colors p-6">
-                <h3 class="text-xl font-bold text-white mb-3">MedProctor Optimization</h3>
-                <p class="text-gray-400 mb-4 text-sm">Performance optimization for healthcare platform, dramatically
-                  reducing processing times.</p>
-                <ul class="text-sm text-gray-400 space-y-1 mb-4">
-                  <li>• 5 hours → 20 seconds (99.9% faster)</li>
-                  <li>• Fixed SQL Server bottleneck</li>
-                  <li>• 60% faster EF queries</li>
-                  <li>• Bulk insert strategies</li>
-                </ul>
-                <div class="flex flex-wrap gap-2"><span
-                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">C#</span><span
-                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">SQL Server</span><span
-                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">AWS Lambda</span><span
-                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">EF Core</span></div>
-              </div>
-              <!-- StubHub -->
-              <div
-                class="bg-gray-800 rounded-lg overflow-hidden border border-gray-700 hover:border-purple-500 transition-colors p-6">
-                <h3 class="text-xl font-bold text-white mb-3">StubHub Payments</h3>
-                <p class="text-gray-400 mb-4 text-sm">Developed payment processing features for StubHub's ticketing
-                  platform, increasing conversion rates.</p>
-                <ul class="text-sm text-gray-400 space-y-1 mb-4">
-                  <li>• Increased large order processing by 2%</li>
-                  <li>• Led team of 2 engineers</li>
-                  <li>• Improved revenue and conversion</li>
-                  <li>• Mentored junior developers</li>
-                </ul>
-                <div class="flex flex-wrap gap-2"><span
-                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">C#</span><span
-                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">React</span><span
-                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">JavaScript</span><span
-                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">SQL Server</span></div>
-              </div>
-              <!-- PVTsim Nova -->
-              <div
-                class="bg-gray-800 rounded-lg overflow-hidden border border-gray-700 hover:border-purple-500 transition-colors p-6">
-                <h3 class="text-xl font-bold text-white mb-3">PVTsim Nova</h3>
-                <p class="text-gray-400 mb-4 text-sm">Revolutionary oil and gas simulation platform with industry-first
-                  ML-based automated data import.</p>
-                <ul class="text-sm text-gray-400 space-y-1 mb-4">
-                  <li>• First ML-based PVT data import worldwide</li>
-                  <li>• Created new revenue stream</li>
-                  <li>• Built Web API with C# &amp; Python SDKs</li>
-                  <li>• Docker/Kubernetes deployment</li>
-                </ul>
-                <div class="flex flex-wrap gap-2"><span
-                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">C#</span><span
-                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">.NET Core</span><span
-                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">Python</span><span
-                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">ML</span><span
-                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">Docker</span></div>
-              </div>
-              <!-- VLXE SDK -->
-              <div
-                class="bg-gray-800 rounded-lg overflow-hidden border border-gray-700 hover:border-purple-500 transition-colors p-6">
-                <h3 class="text-xl font-bold text-white mb-3">VLXE Multi-Language SDK</h3>
-                <p class="text-gray-400 mb-4 text-sm">Created comprehensive SDK and samples in C#, Python, and
-                  JavaScript for VLXE API.</p>
-                <ul class="text-sm text-gray-400 space-y-1 mb-4">
-                  <li>• SDK in 3 languages (C#, Python, JS)</li>
-                  <li>• Complete UI from Figma design</li>
-                  <li>• Comprehensive code samples</li>
-                  <li>• Blazor &amp; Razor implementation</li>
-                </ul>
-                <div class="flex flex-wrap gap-2"><span
-                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">C#</span><span
-                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">Python</span><span
-                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">JavaScript</span><span
-                    class="px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full text-xs">Blazor</span></div>
-              </div>
-            </div>
-            <div class="text-center mt-12"><a href="#contact"
-                class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors inline-block">Discuss
-                Your Project</a></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ========== TESTIMONIALS ========== -->
-      <section id="testimonials">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-          <div class="py-12 md:py-20 border-t border-gray-800">
-            <div class="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-              <h2 class="h2 mb-4">Don't take my word for it</h2>
-              <p class="text-xl text-gray-400">Read what my clients have to say about the transformative impact my
-                services have had on their businesses.</p>
-            </div>
-            <div class="max-w-sm mx-auto grid gap-8 lg:grid-cols-3 lg:gap-6 items-start lg:max-w-none">
-              <div class="flex flex-col h-full p-6 bg-gray-800" data-aos="fade-up">
-                <div>
-                  <div class="relative inline-flex flex-col mb-4"><img class="rounded-full"
-                      src="images/testimonial-01.jpg" width="48" height="48" alt="Igor Sakotic" /><svg
-                      class="absolute top-0 right-0 -mr-3 w-6 h-5 fill-current text-purple-600" viewBox="0 0 24 20">
-                      <path
-                        d="M0 13.517c0-2.346.611-4.774 1.833-7.283C3.056 3.726 4.733 1.648 6.865 0L11 2.696C9.726 4.393 8.777 6.109 8.152 7.844c-.624 1.735-.936 3.589-.936 5.56v4.644H0v-4.531zm13 0c0-2.346.611-4.774 1.833-7.283 1.223-2.508 2.9-4.586 5.032-6.234L24 2.696c-1.274 1.697-2.223 3.413-2.848 5.148-.624 1.735-.936 3.589-.936 5.56v4.644H13v-4.531z" />
-                    </svg></div>
-                </div>
-                <blockquote class="text-lg text-gray-400 grow">— We tasked them with a complex project, and they
-                  delivered beyond expectations. Their team's expertise in React and Node.js transformed our operations,
-                  making them more efficient and scalable.</blockquote>
-                <div class="text-gray-700 font-medium mt-6 pt-5 border-t border-gray-700"><cite
-                    class="text-gray-200 not-italic">Igor Sakotic</cite> - <span class="text-purple-600">Sakotic
-                    Lab</span></div>
-              </div>
-              <div class="flex flex-col h-full p-6 bg-gray-800" data-aos="fade-up" data-aos-delay="200">
-                <div>
-                  <div class="relative inline-flex flex-col mb-4"><img class="rounded-full"
-                      src="images/testimonial-02.jpg" width="48" height="48" alt="Dr. Torben Laursen" /><svg
-                      class="absolute top-0 right-0 -mr-3 w-6 h-5 fill-current text-purple-600" viewBox="0 0 24 20">
-                      <path
-                        d="M0 13.517c0-2.346.611-4.774 1.833-7.283C3.056 3.726 4.733 1.648 6.865 0L11 2.696C9.726 4.393 8.777 6.109 8.152 7.844c-.624 1.735-.936 3.589-.936 5.56v4.644H0v-4.531zm13 0c0-2.346.611-4.774 1.833-7.283 1.223-2.508 2.9-4.586 5.032-6.234L24 2.696c-1.274 1.697-2.223 3.413-2.848 5.148-.624 1.735-.936 3.589-.936 5.56v4.644H13v-4.531z" />
-                    </svg></div>
-                </div>
-                <blockquote class="text-lg text-gray-400 grow">— From our first consultation, it was clear that they
-                  were fully committed to understanding our unique needs. The custom C# solution they developed has
-                  become the backbone of our business operations.</blockquote>
-                <div class="text-gray-700 font-medium mt-6 pt-5 border-t border-gray-700"><cite
-                    class="text-gray-200 not-italic">Dr. Torben Laursen</cite> - <span class="text-purple-600">VLXE
-                    AS</span></div>
-              </div>
-              <div class="flex flex-col h-full p-6 bg-gray-800" data-aos="fade-up" data-aos-delay="400">
-                <div>
-                  <div class="relative inline-flex flex-col mb-4"><img class="rounded-full"
-                      src="images/testimonial-03.jpg" width="48" height="48" alt="Mika Andjelic" /><svg
-                      class="absolute top-0 right-0 -mr-3 w-6 h-5 fill-current text-purple-600" viewBox="0 0 24 20">
-                      <path
-                        d="M0 13.517c0-2.346.611-4.774 1.833-7.283C3.056 3.726 4.733 1.648 6.865 0L11 2.696C9.726 4.393 8.777 6.109 8.152 7.844c-.624 1.735-.936 3.589-.936 5.56v4.644H0v-4.531zm13 0c0-2.346.611-4.774 1.833-7.283 1.223-2.508 2.9-4.586 5.032-6.234L24 2.696c-1.274 1.697-2.223 3.413-2.848 5.148-.624 1.735-.936 3.589-.936 5.56v4.644H13v-4.531z" />
-                    </svg></div>
-                </div>
-                <blockquote class="text-lg text-gray-400 grow">— Their Agile approach made all the difference in our
-                  project's success. We were kept in the loop at every stage, with flexibility that allowed for
-                  real-time adjustments. The result? A product that perfectly matched our vision.</blockquote>
-                <div class="text-gray-700 font-medium mt-6 pt-5 border-t border-gray-700"><cite
-                    class="text-gray-200 not-italic">Mika Andjelic</cite> - <span class="text-purple-600">Andjelic
-                    Vinery</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ========== FAQ ========== -->
-      <section class="border-t border-gray-800">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6">
-          <div class="py-12 md:py-20">
-            <div class="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-              <h2 class="h2 mb-4">Frequently Asked Questions</h2>
-              <p class="text-xl text-gray-400">Everything you need to know about working with Rashtan Soft</p>
-            </div>
-            <div class="space-y-4" data-aos="fade-up">
-              <div class="bg-gray-800 border border-gray-700 rounded-lg"><button
-                  class="faq-toggle w-full text-left p-6 flex justify-between items-center"><span
-                    class="text-lg font-semibold text-white">What is your development process?</span><svg
-                    class="w-5 h-5 text-gray-400 shrink-0 ml-4 transition-transform" fill="none" stroke="currentColor"
-                    viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                  </svg></button>
-                <div class="faq-answer">
-                  <p class="px-6 pb-6 text-gray-400">I follow an Agile methodology with clear milestones and regular
-                    communication. Projects typically start with a discovery phase, followed by iterative development
-                    sprints with weekly check-ins.</p>
-                </div>
-              </div>
-              <div class="bg-gray-800 border border-gray-700 rounded-lg"><button
-                  class="faq-toggle w-full text-left p-6 flex justify-between items-center"><span
-                    class="text-lg font-semibold text-white">What are your rates and payment terms?</span><svg
-                    class="w-5 h-5 text-gray-400 shrink-0 ml-4 transition-transform" fill="none" stroke="currentColor"
-                    viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                  </svg></button>
-                <div class="faq-answer">
-                  <p class="px-6 pb-6 text-gray-400">Rates vary based on project complexity. I offer both hourly and
-                    project-based pricing. For Toptal clients, rates are set through their platform. For direct
-                    engagements, I provide custom quotes after understanding your needs.</p>
-                </div>
-              </div>
-              <div class="bg-gray-800 border border-gray-700 rounded-lg"><button
-                  class="faq-toggle w-full text-left p-6 flex justify-between items-center"><span
-                    class="text-lg font-semibold text-white">Do you offer ongoing support and maintenance?</span><svg
-                    class="w-5 h-5 text-gray-400 shrink-0 ml-4 transition-transform" fill="none" stroke="currentColor"
-                    viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                  </svg></button>
-                <div class="faq-answer">
-                  <p class="px-6 pb-6 text-gray-400">Yes, I provide post-launch support and maintenance for all projects
-                    including bug fixes, performance monitoring, security updates, and feature enhancements.</p>
-                </div>
-              </div>
-              <div class="bg-gray-800 border border-gray-700 rounded-lg"><button
-                  class="faq-toggle w-full text-left p-6 flex justify-between items-center"><span
-                    class="text-lg font-semibold text-white">How long does a typical project take?</span><svg
-                    class="w-5 h-5 text-gray-400 shrink-0 ml-4 transition-transform" fill="none" stroke="currentColor"
-                    viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                  </svg></button>
-                <div class="faq-answer">
-                  <p class="px-6 pb-6 text-gray-400">A simple web application might take 4-8 weeks, while a complex
-                    enterprise system could take 3-6 months. During our initial consultation, I'll provide a detailed
-                    timeline estimate.</p>
-                </div>
-              </div>
-              <div class="bg-gray-800 border border-gray-700 rounded-lg"><button
-                  class="faq-toggle w-full text-left p-6 flex justify-between items-center"><span
-                    class="text-lg font-semibold text-white">Do you sign NDAs?</span><svg
-                    class="w-5 h-5 text-gray-400 shrink-0 ml-4 transition-transform" fill="none" stroke="currentColor"
-                    viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                  </svg></button>
-                <div class="faq-answer">
-                  <p class="px-6 pb-6 text-gray-400">Absolutely. I understand the importance of confidentiality and am
-                    happy to sign NDAs before discussing project details.</p>
-                </div>
-              </div>
-              <div class="bg-gray-800 border border-gray-700 rounded-lg"><button
-                  class="faq-toggle w-full text-left p-6 flex justify-between items-center"><span
-                    class="text-lg font-semibold text-white">Can you work with our existing team?</span><svg
-                    class="w-5 h-5 text-gray-400 shrink-0 ml-4 transition-transform" fill="none" stroke="currentColor"
-                    viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                  </svg></button>
-                <div class="faq-answer">
-                  <p class="px-6 pb-6 text-gray-400">Yes, I regularly collaborate with existing development teams. I'm
-                    experienced with GitHub, Azure DevOps, Jira, Slack and can adapt to your team's workflows.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ========== CONTACT ========== -->
-      <section id="contact" class="border-t border-gray-800">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-          <div class="py-12 md:py-20">
-            <div class="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-              <h2 class="h2 mb-4">Let's Build Something Great Together</h2>
-              <p class="text-xl text-gray-400">Ready to start your project? Get in touch today.</p>
-            </div>
-            <div class="md:grid md:grid-cols-2 gap-12">
-              <!-- Left - Contact Info -->
-              <div data-aos="fade-right">
-                <h3 class="text-2xl font-bold text-white mb-6">Get In Touch</h3>
-                <div class="space-y-6">
-                  <div class="flex items-start"><svg class="w-6 h-6 text-purple-500 shrink-0" fill="none"
-                      stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                    <div class="ml-4">
-                      <p class="text-gray-400">Email</p><a href="mailto:admin@rashtan-soft.com"
-                        class="text-white hover:text-purple-400 transition-colors">admin@rashtan-soft.com</a>
-                    </div>
-                  </div>
-                  <div class="flex items-start"><svg class="w-6 h-6 text-purple-500 shrink-0" fill="none"
-                      stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    <div class="ml-4">
-                      <p class="text-gray-400">Location</p>
-                      <p class="text-white">Trebinje, Bosnia and Herzegovina</p>
-                      <p class="text-gray-500 text-sm">Available for remote work worldwide</p>
-                    </div>
-                  </div>
-                  <div class="flex items-start"><svg class="w-6 h-6 text-purple-500 shrink-0" fill="none"
-                      stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <div class="ml-4">
-                      <p class="text-gray-400">Response Time</p>
-                      <p class="text-white">Within 24 hours</p>
-                    </div>
-                  </div>
-                </div>
-                <!-- Why Work With Me -->
-                <div class="mt-8 bg-gray-800 border border-gray-700 rounded-lg p-6">
-                  <h4 class="text-lg font-semibold text-white mb-3">Why Work With Rashtan Soft?</h4>
-                  <ul class="space-y-2 text-gray-400 text-sm">
-                    <li class="flex items-start"><svg class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"
-                        fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                          clip-rule="evenodd" />
-                      </svg>Direct access to senior-level expertise (10+ years)</li>
-                    <li class="flex items-start"><svg class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"
-                        fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                          clip-rule="evenodd" />
-                      </svg>Top 3% Toptal verified developer</li>
-                    <li class="flex items-start"><svg class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"
-                        fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                          clip-rule="evenodd" />
-                      </svg>Proven track record across 5+ countries</li>
-                    <li class="flex items-start"><svg class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"
-                        fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                          clip-rule="evenodd" />
-                      </svg>Flexible engagement (part-time or project-based)</li>
-                    <li class="flex items-start"><svg class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"
-                        fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                          clip-rule="evenodd" />
-                      </svg>Personal attention from founder on every project</li>
-                  </ul>
-                </div>
-              </div>
-              <!-- Right - Calendly Placeholder -->
-              <div data-aos="fade-left">
-                <h3 class="text-2xl font-bold text-white mb-6">Schedule a Free Consultation</h3>
-                <div class="bg-gray-800 rounded-lg overflow-hidden border border-gray-700">
-                  <!-- Calendly inline widget begin -->
-                  <div class="calendly-inline-widget" data-url="https://calendly.com/gavrilo-mumovic/30min"
-                    style="min-width:320px;height:700px;"></div>
-                  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"
-                    async></script>
-                  <!-- Calendly inline widget end -->
-                </div>
-                <p class="text-gray-500 text-sm mt-4 text-center">Or connect via <a
-                    href="https://www.linkedin.com/in/gavrilo-mumovic/" target="_blank"
-                    class="text-purple-400 hover:text-purple-300">LinkedIn</a> · <a href="mailto:admin@rashtan-soft.com"
-                    class="text-purple-400 hover:text-purple-300">Email</a></p>
-              </div>
-            </div>
-
-            <!-- Contact Form -->
-            <div class="mt-16 border-t border-gray-800 pt-12" data-aos="fade-up">
-              <div class="max-w-3xl mx-auto">
-                <h3 class="text-2xl font-bold text-white mb-2 text-center">Prefer a Form? Tell Me About Your Project
-                </h3>
-                <p class="text-gray-400 text-center mb-8">Fill out the details below and I'll get back to you within 24
-                  hours.</p>
-                <form id="contact-form" action="https://formspree.io/f/xnjbjqgq" method="POST" class="space-y-6">
-                  <!-- Essential Fields -->
-                  <div class="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Name <span
-                          class="text-red-400">*</span></label>
-                      <input type="text" id="name" name="name" required
-                        class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors"
-                        placeholder="Your full name" />
-                    </div>
-                    <div>
-                      <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email <span
-                          class="text-red-400">*</span></label>
-                      <input type="email" id="email" name="email" required
-                        class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors"
-                        placeholder="your@email.com" />
-                    </div>
-                  </div>
-                  <div>
-                    <label for="company" class="block text-sm font-medium text-gray-300 mb-2">Company <span
-                        class="text-gray-500">(optional)</span></label>
-                    <input type="text" id="company" name="company"
-                      class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors"
-                      placeholder="Your company name" />
-                  </div>
-
-                  <!-- Optional Qualifying Fields -->
-                  <div class="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label for="project-type" class="block text-sm font-medium text-gray-300 mb-2">Project
-                        Type</label>
-                      <select id="project-type" name="project_type"
-                        class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors appearance-none"
-                        style="background-image:url('data:image/svg+xml;utf8,<svg fill=&quot;%239ca3af&quot; viewBox=&quot;0 0 20 20&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;><path fill-rule=&quot;evenodd&quot; d=&quot;M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z&quot; clip-rule=&quot;evenodd&quot;/></svg>');background-repeat:no-repeat;background-position:right 0.75rem center;background-size:1.25rem;">
-                        <option value="" class="bg-gray-800">Select a project type...</option>
-                        <option value="Full-Stack Development" class="bg-gray-800">Full-Stack Development</option>
-                        <option value="Cloud Architecture" class="bg-gray-800">Cloud Architecture</option>
-                        <option value="Performance Optimization" class="bg-gray-800">Performance Optimization</option>
-                        <option value="Legacy Modernization" class="bg-gray-800">Legacy Modernization</option>
-                        <option value="Other" class="bg-gray-800">Other</option>
-                      </select>
-                    </div>
-                    <div>
-                      <label for="budget" class="block text-sm font-medium text-gray-300 mb-2">Budget Range</label>
-                      <select id="budget" name="budget"
-                        class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors appearance-none"
-                        style="background-image:url('data:image/svg+xml;utf8,<svg fill=&quot;%239ca3af&quot; viewBox=&quot;0 0 20 20&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;><path fill-rule=&quot;evenodd&quot; d=&quot;M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z&quot; clip-rule=&quot;evenodd&quot;/></svg>');background-repeat:no-repeat;background-position:right 0.75rem center;background-size:1.25rem;">
-                        <option value="" class="bg-gray-800">Select budget range...</option>
-                        <option value="< $10k" class="bg-gray-800">&lt; $10,000</option>
-                        <option value="$10k-$25k" class="bg-gray-800">$10,000 – $25,000</option>
-                        <option value="$25k-$50k" class="bg-gray-800">$25,000 – $50,000</option>
-                        <option value="$50k-$100k" class="bg-gray-800">$50,000 – $100,000</option>
-                        <option value="$100k+" class="bg-gray-800">$100,000+</option>
-                        <option value="Not Sure" class="bg-gray-800">Not Sure</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label for="timeline" class="block text-sm font-medium text-gray-300 mb-2">Timeline</label>
-                      <select id="timeline" name="timeline"
-                        class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors appearance-none"
-                        style="background-image:url('data:image/svg+xml;utf8,<svg fill=&quot;%239ca3af&quot; viewBox=&quot;0 0 20 20&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;><path fill-rule=&quot;evenodd&quot; d=&quot;M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z&quot; clip-rule=&quot;evenodd&quot;/></svg>');background-repeat:no-repeat;background-position:right 0.75rem center;background-size:1.25rem;">
-                        <option value="" class="bg-gray-800">Select timeline...</option>
-                        <option value="Urgent (< 1 month)" class="bg-gray-800">Urgent (&lt; 1 month)</option>
-                        <option value="1-3 months" class="bg-gray-800">1–3 months</option>
-                        <option value="3-6 months" class="bg-gray-800">3–6 months</option>
-                        <option value="6+ months" class="bg-gray-800">6+ months</option>
-                        <option value="Flexible" class="bg-gray-800">Flexible</option>
-                      </select>
-                    </div>
-                    <div>
-                      <label for="referral" class="block text-sm font-medium text-gray-300 mb-2">How did you hear about
-                        me?</label>
-                      <select id="referral" name="referral_source"
-                        class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors appearance-none"
-                        style="background-image:url('data:image/svg+xml;utf8,<svg fill=&quot;%239ca3af&quot; viewBox=&quot;0 0 20 20&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;><path fill-rule=&quot;evenodd&quot; d=&quot;M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z&quot; clip-rule=&quot;evenodd&quot;/></svg>');background-repeat:no-repeat;background-position:right 0.75rem center;background-size:1.25rem;">
-                        <option value="" class="bg-gray-800">Select source...</option>
-                        <option value="Toptal" class="bg-gray-800">Toptal</option>
-                        <option value="LinkedIn" class="bg-gray-800">LinkedIn</option>
-                        <option value="Google Search" class="bg-gray-800">Google Search</option>
-                        <option value="Referral" class="bg-gray-800">Referral</option>
-                        <option value="Other" class="bg-gray-800">Other</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <!-- Project Description -->
-                  <div>
-                    <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Project Description <span
-                        class="text-red-400">*</span></label>
-                    <textarea id="message" name="message" rows="5" required
-                      class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors resize-vertical"
-                      placeholder="Describe your project, goals, and any specific requirements..."></textarea>
-                  </div>
-
-                  <!-- Submit -->
-                  <div class="text-center">
-                    <button type="submit" id="form-submit-btn"
-                      class="bg-purple-600 hover:bg-purple-700 text-white px-10 py-3 rounded-lg font-semibold transition-colors inline-flex items-center gap-2">
-                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                      Send Message
-                    </button>
-                  </div>
-
-                  <!-- Success/Error Messages -->
-                  <div id="form-status" class="text-center hidden">
-                    <div id="form-success"
-                      class="hidden text-green-400 bg-green-900/20 border border-green-800 rounded-lg p-4">
-                      <svg class="w-6 h-6 mx-auto mb-2" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                          clip-rule="evenodd" />
-                      </svg>
-                      Thank you! Your message has been sent. I'll get back to you within 24 hours.
-                    </div>
-                    <div id="form-error" class="hidden text-red-400 bg-red-900/20 border border-red-800 rounded-lg p-4">
-                      Something went wrong. Please try again or email me directly at admin@rashtan-soft.com.
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-    </main>
-
-    <!-- ========== FOOTER ========== -->
-    <footer class="border-t border-gray-800">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 md:py-16">
-        <div class="grid md:grid-cols-12 gap-8 lg:gap-20 mb-8 md:mb-12">
-          <div class="md:col-span-4 lg:col-span-5">
-            <div class="mb-2">
-              <a href="#home" class="inline-flex items-center" aria-label="Rashtan Soft">
-                <img class="rounded-full" src="images/logo-dark.png" width="32" height="32" alt="Rashtan Soft" />
-                <span class="ml-2 text-lg font-bold text-white">Rashtan Soft</span>
-              </a>
-            </div>
-            <div class="text-gray-400 text-sm">Senior software engineering services specializing in C#, React, and
-              Node.js. Top 3% Toptal verified developer serving clients worldwide.</div>
-          </div>
-          <div class="md:col-span-8 lg:col-span-7 grid sm:grid-cols-3 gap-8">
-            <div class="text-sm">
-              <h6 class="text-gray-200 font-medium mb-2">Products</h6>
-              <ul>
-                <li class="mb-1"><a href="https://www.dentallabguru.com/"
-                    class="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Dental Lab Guru</a>
-                </li>
-                <li class="mb-1"><a href="https://app.zubnatehnika.org/"
-                    class="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Organizator Zubne
-                    Tehnike</a></li>
-              </ul>
-            </div>
-            <div class="text-sm">
-              <h6 class="text-gray-200 font-medium mb-2">Services</h6>
-              <ul>
-                <li class="mb-1"><a href="#services"
-                    class="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">.NET Development</a>
-                </li>
-                <li class="mb-1"><a href="#services"
-                    class="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">React Development</a>
-                </li>
-                <li class="mb-1"><a href="#services"
-                    class="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Node.js
-                    Development</a></li>
-                <li class="mb-1"><a href="#services"
-                    class="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">AWS &amp; Azure
-                    Hosting</a></li>
-              </ul>
-            </div>
-            <div class="text-sm">
-              <h6 class="text-gray-200 font-medium mb-2">Contact</h6>
-              <ul>
-                <li class="mb-1"><a href="mailto:admin@rashtan-soft.com"
-                    class="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">admin@rashtan-soft.com</a>
-                </li>
-                <li class="mb-1 text-gray-400">Trebinje, Bosnia &amp; Herzegovina</li>
-                <li class="mb-1 text-gray-400">Remote worldwide</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="md:flex md:items-center md:justify-between">
-          <ul class="flex mb-4 md:order-1 md:ml-4 md:mb-0">
-            <li class="ml-4"><a href="https://github.com/gajo357"
-                class="flex justify-center items-center text-purple-600 bg-gray-800 hover:text-gray-100 hover:bg-purple-600 rounded-full transition duration-150 ease-in-out"
-                aria-label="Github"><svg class="w-8 h-8 fill-current" viewBox="0 0 32 32">
-                  <path
-                    d="M16 8.2c-4.4 0-8 3.6-8 8 0 3.5 2.3 6.5 5.5 7.6.4.1.5-.2.5-.4V22c-2.2.5-2.7-1-2.7-1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.3 1.9.9 2.3.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-4 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8.6-.2 1.3-.3 2-.3s1.4.1 2 .3c1.5-1 2.2-.8 2.2-.8.4 1.1.2 1.9.1 2.1.5.6.8 1.3.8 2.1 0 3.1-1.9 3.7-3.7 3.9.3.4.6.9.6 1.6v2.2c0 .2.1.5.6.4 3.2-1.1 5.5-4.1 5.5-7.6-.1-4.4-3.7-8-8.1-8z" />
-                </svg></a></li>
-            <li class="ml-4"><a href="https://www.linkedin.com/in/gavrilo-mumovic/"
-                class="flex justify-center items-center text-purple-600 bg-gray-800 hover:text-gray-100 hover:bg-purple-600 rounded-full transition duration-150 ease-in-out"
-                aria-label="Linkedin"><svg class="w-8 h-8 fill-current" viewBox="0 0 32 32">
-                  <path
-                    d="M23.3 8H8.7c-.4 0-.7.3-.7.7v14.7c0 .3.3.6.7.6h14.7c.4 0 .7-.3.7-.7V8.7c-.1-.4-.4-.7-.8-.7zM12.7 21.6h-2.3V14h2.4v7.6h-.1zM11.6 13c-.8 0-1.4-.7-1.4-1.4 0-.8.6-1.4 1.4-1.4.8 0 1.4.6 1.4 1.4-.1.7-.7 1.4-1.4 1.4zm10 8.6h-2.4v-3.7c0-.9 0-2-1.2-2s-1.4 1-1.4 2v3.8h-2.4V14h2.3v1c.3-.6 1.1-1.2 2.2-1.2 2.4 0 2.8 1.6 2.8 3.6v4.2h.1z" />
-                </svg></a></li>
-            <li class="ml-4"><a href="https://www.toptal.com/developers/resume/gavrilo-mumovic#qK3P5E"
-                class="flex justify-center items-center text-purple-600 bg-gray-800 hover:text-gray-100 hover:bg-purple-600 rounded-full transition duration-150 ease-in-out"
-                aria-label="Toptal"><svg class="w-8 h-8 fill-current p-1" viewBox="0 0 24 32">
-                  <path
-                    d="M8.11 0L14.82 6.7C14.87 6.75 14.91 6.8 14.97 6.85L20.82 12.7L11.31 22.16L15.66 26.52L12.75 29.41L6.09 22.75C6.01 22.68 5.93 22.6 5.85 22.52L0 16.68L9.48 7.25L5.16 2.94L8.11 0ZM12.36 10.5C12.27 10.48 12.18 10.48 12.1 10.5C12.01 10.53 11.94 10.57 11.78 10.72L6.37 16.11C6.21 16.27 6.17 16.34 6.15 16.42C6.12 16.51 6.12 16.6 6.15 16.68C6.17 16.77 6.22 16.85 6.37 17L8.09 18.72C8.24 18.87 8.31 18.91 8.4 18.94C8.49 18.96 8.57 18.96 8.66 18.94C8.75 18.91 8.82 18.87 8.97 18.72L14.38 13.33C14.54 13.18 14.58 13.1 14.61 13.02C14.63 12.93 14.63 12.85 14.61 12.76C14.59 12.67 14.54 12.6 14.39 12.45L12.67 10.73C12.52 10.57 12.44 10.53 12.36 10.5Z" />
-                </svg></a></li>
-          </ul>
-          <div class="text-gray-400 text-sm mr-4">&copy; Rashtan-Soft. All rights reserved.</div>
-        </div>
-      </div>
-    </footer>
-
-  </div>
-
-  <!-- Back to Top Button -->
-  <button id="back-to-top"
-    class="fixed bottom-8 right-8 bg-purple-600 hover:bg-purple-700 text-white p-3 rounded-full shadow-lg transition-all opacity-0 invisible z-50"
-    aria-label="Back to top">
-    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
-    </svg>
-  </button>
-
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    // AOS init
-    AOS.init({ once: true, disable: 'phone', duration: 600, easing: 'ease-out-sine' });
-
-    // Video modal
-    function openVideoModal() {
-      document.getElementById('videoBackdrop').classList.add('active');
-      document.getElementById('videoContainer').classList.add('active');
-      document.getElementById('modalVideo').play();
-    }
-    function closeVideoModal() {
-      document.getElementById('videoBackdrop').classList.remove('active');
-      document.getElementById('videoContainer').classList.remove('active');
-      var v = document.getElementById('modalVideo');
-      v.pause(); v.currentTime = 0;
-    }
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeVideoModal(); });
-
-    // Mobile menu toggle
-    document.getElementById('mobile-menu-button').addEventListener('click', function () {
-      document.getElementById('mobile-menu').classList.toggle('hidden');
-    });
-    document.querySelectorAll('#mobile-menu a').forEach(function (link) {
-      link.addEventListener('click', function () { document.getElementById('mobile-menu').classList.add('hidden'); });
-    });
-
-    // Smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        var target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          var offset = 64; // nav height
-          var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-          window.scrollTo({ top: top, behavior: 'smooth' });
-        }
-      });
-    });
-
-    // Back to top
-    var backToTop = document.getElementById('back-to-top');
-    window.addEventListener('scroll', function () {
-      if (window.pageYOffset > 300) {
-        backToTop.classList.remove('opacity-0', 'invisible');
-        backToTop.classList.add('opacity-100', 'visible');
-      } else {
-        backToTop.classList.add('opacity-0', 'invisible');
-        backToTop.classList.remove('opacity-100', 'visible');
-      }
-    });
-    backToTop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
-
-    // FAQ toggles
-    document.querySelectorAll('.faq-toggle').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var answer = this.nextElementSibling;
-        var icon = this.querySelector('svg');
-        answer.classList.toggle('open');
-        icon.style.transform = answer.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0)';
-      });
-    });
-
-    // Contact form AJAX submission
-    var contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-      contactForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var btn = document.getElementById('form-submit-btn');
-        var statusEl = document.getElementById('form-status');
-        var successEl = document.getElementById('form-success');
-        var errorEl = document.getElementById('form-error');
-
-        btn.disabled = true;
-        btn.textContent = 'Sending...';
-        statusEl.classList.add('hidden');
-        successEl.classList.add('hidden');
-        errorEl.classList.add('hidden');
-
-        fetch(contactForm.action, {
-          method: 'POST',
-          body: new FormData(contactForm),
-          headers: { 'Accept': 'application/json' }
-        }).then(function (response) {
-          statusEl.classList.remove('hidden');
-          if (response.ok) {
-            successEl.classList.remove('hidden');
-            contactForm.reset();
-          } else {
-            errorEl.classList.remove('hidden');
-          }
-          btn.disabled = false;
-          btn.innerHTML = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg> Send Message';
-        }).catch(function () {
-          statusEl.classList.remove('hidden');
-          errorEl.classList.remove('hidden');
-          btn.disabled = false;
-          btn.innerHTML = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg> Send Message';
-        });
-      });
-    }
-  </script>
+  <script src="/assets/js/site.js" defer></script>
+  <script src="/assets/js/contact.js" defer></script>
 </body>
 
 </html>
