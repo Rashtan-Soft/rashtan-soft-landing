@@ -1,0 +1,15 @@
+---
+interface Props {
+  label: string;
+  value: string;
+  detail?: string;
+}
+
+const { label, value, detail } = Astro.props;
+---
+
+<aside class="case-result" aria-label={label}>
+  <p class="case-result__label">{label}</p>
+  <p class="case-result__value">{value}</p>
+  {detail && <p class="case-result__detail">{detail}</p>}
+</aside>

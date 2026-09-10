@@ -5,6 +5,12 @@ import BaseLayout from "./BaseLayout.astro";
 interface Fact {
   label: string;
   value: string;
+  note?: string;
+}
+
+interface Meta {
+  label: string;
+  value: string;
 }
 
 interface Props {
@@ -15,13 +21,15 @@ interface Props {
   caseTitle: string;
   summary: string;
   facts: Fact[];
+  factsHeading?: string;
+  meta?: Meta[];
 }
 
-const { title, description, socialDescription, eyebrow, caseTitle, summary, facts } = Astro.props;
+const { title, description, socialDescription, eyebrow, caseTitle, summary, facts, factsHeading, meta } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description} socialType="article" socialDescription={socialDescription}>
-  <CaseStudyHero eyebrow={eyebrow} title={caseTitle} summary={summary} facts={facts} />
+  <CaseStudyHero eyebrow={eyebrow} title={caseTitle} summary={summary} facts={facts} factsHeading={factsHeading} meta={meta} />
   <article class="article">
     <slot />
   </article>

@@ -3,41 +3,60 @@ import CaseStudyLayout from "../../layouts/CaseStudyLayout.astro";
 ---
 
 <CaseStudyLayout
-  title="Illuvium Backend Systems | Rashtan Soft"
-  description="A focused account of Gavrilo Mumovic's professional backend and infrastructure work for a game project."
-  socialDescription="A focused account of backend and infrastructure work for a game project."
+  title="Illuvium — Building and Running Game Backends | Rashtan Soft"
+  description="A case study of Gavrilo Mumovic's professional backend ownership for game services at Illuvium."
+  socialDescription="Professional backend ownership across architecture, implementation and production operations."
   eyebrow="Professional experience"
-  caseTitle="Illuvium backend systems"
-  summary="Backend and infrastructure work for a game project, from architecture decisions through the realities of production."
+  caseTitle="Illuvium — building and running game backends"
+  summary="I worked as the sole backend engineer for several games at Illuvium, covering architecture, implementation and production operations. I built Deathmatch from scratch and owned the Gauntlet backend from its first line of code until the project moved to GameLift servers."
+  meta={[
+    { label: "Role", value: "Senior Backend Engineer" },
+    { label: "Period", value: "December 2023–Present" }
+  ]}
+  factsHeading="Deathmatch backend"
   facts={[
-    { label: "Focus", value: "Backend systems and infrastructure" },
-    { label: "Context", value: "A live game project" },
-    { label: "Contribution", value: "Engineering work across design, delivery and operation" }
+    { label: "AWS Lambda functions", value: "Approximately 100", note: "Architecture scale for Deathmatch." },
+    { label: "APIs", value: "3", note: "Architecture scale for Deathmatch." },
+    { label: "DynamoDB data model", value: "A single table", note: "Deathmatch data model." }
   ]}
 >
-  <h2>Context</h2>
-  <p>I worked on backend systems and infrastructure for a game project. The work involved turning product and gameplay needs into services that could be changed, deployed and operated in production.</p>
+  <h2>What I owned</h2>
+  <p>I was responsible for the backend architecture, implementation and production operations for several games. That work covered taking backend decisions from an initial design through implementation and into the day-to-day reality of operating software in production.</p>
+  <p>As the sole backend engineer for these services, I worked across the technical choices that make a backend understandable, changeable and supportable while collaborating with the teams building the wider games.</p>
 
-  <h2>The engineering question</h2>
-  <p>The useful question was not simply what to build. It was where system boundaries belonged, how changes could be delivered safely and how the people operating the software would understand what was happening after release.</p>
-  <p>That changes the shape of the work. A backend is not only an API surface: it needs clear responsibilities, useful operational signals and a delivery approach that lets the team learn without making every change risky.</p>
+  <h2>Building Deathmatch from scratch</h2>
+  <p>I built the Deathmatch backend from scratch. It used around 100 AWS Lambda functions, three APIs and event-driven workflows with SQS, EventBridge, OpenSearch and a single DynamoDB table.</p>
+  <p>Those details describe the shape of the Deathmatch backend rather than the wider Illuvium platform. The work was about creating a service landscape that could support the game as it moved from an initial implementation into production operation.</p>
 
-  <h2>My contribution</h2>
-  <ul>
-    <li>Worked on backend components and infrastructure decisions alongside the wider product and game teams.</li>
-    <li>Approached changes as production work, considering deployment, observability and the likely next iteration.</li>
-    <li>Helped translate evolving requirements into technical boundaries that the system could sustain.</li>
-  </ul>
+  <h2>Making the backend easier to operate</h2>
+  <p>Alongside game features, I built idempotency, caching, analytics and operational tooling around the backend. These are the pieces that help a service handle repeated work safely, provide useful signals and remain practical to support after release.</p>
+  <p>Production responsibility shaped the work from the outset: backend decisions needed to account for how the system would be run and changed, not only how an individual endpoint or feature would be implemented.</p>
+
+  <h2>Revisiting earlier choices</h2>
+  <p>As the backend evolved, I revisited earlier choices instead of treating the first implementation as fixed. I upgraded to .NET 9 and removed AutoMapper as part of work focused on Lambda cold starts.</p>
+  <p>The point was to make a targeted runtime decision in response to the backend's operating context. It was practical maintenance work rather than a claim that a first design will stay right indefinitely.</p>
+
+  <h2>Gauntlet: a separate backend story</h2>
+  <p>I also owned the Gauntlet backend from the first line of code until the project moved to GameLift servers. That marks the boundary of the work described here; the Deathmatch architecture details do not apply to Gauntlet.</p>
 
   <aside class="article-callout">
-    <p><strong>Confidentiality matters.</strong> This account is intentionally focused on the engineering approach and scope of work. It does not publish internal architecture, operational data or customer information.</p>
+    <p><strong>Scope matters.</strong> This case study focuses on my backend contribution. It does not publish internal architecture details, operational data or customer information.</p>
   </aside>
 
-  <h2>What this illustrates</h2>
-  <p>Reliable backend work is a product discipline as much as an implementation task. The best choices make it easier for a team to understand the system, release work in smaller steps and keep responsibility clear as the product evolves.</p>
+  <section class="case-technologies" aria-labelledby="illuvium-technologies">
+    <h2 id="illuvium-technologies">Confirmed technology scope</h2>
+    <ul class="tag-list" aria-label="Illuvium technologies">
+      <li>.NET 9</li>
+      <li>AWS Lambda</li>
+      <li>SQS</li>
+      <li>EventBridge</li>
+      <li>DynamoDB</li>
+      <li>OpenSearch</li>
+    </ul>
+  </section>
 
   <nav class="article-nav" aria-label="Case study navigation">
     <a class="text-link" href="/work/dental-lab-guru/">Next: Dental Lab Guru</a>
-    <a class="text-link" href="/#contact">Discuss similar work</a>
+    <a class="text-link" href="/#contact">Need help building or running a backend?</a>
   </nav>
 </CaseStudyLayout>

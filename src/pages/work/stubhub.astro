@@ -1,43 +1,64 @@
 ---
 import CaseStudyLayout from "../../layouts/CaseStudyLayout.astro";
+import CaseStudyResult from "../../components/CaseStudyResult.astro";
 ---
 
 <CaseStudyLayout
-  title="StubHub Payment Work | Rashtan Soft"
-  description="A focused account of Gavrilo Mumovic's professional payment-processing work within an established ticketing platform."
-  socialDescription="A focused account of payment-processing work within an established ticketing platform."
+  title="StubHub — Payments and Legacy Backend Work | Rashtan Soft"
+  description="A case study of Gavrilo Mumovic's professional payment and backend work at Viagogo / StubHub."
+  socialDescription="Professional experience improving payment and legacy backend systems in an established platform."
   eyebrow="Professional experience"
-  caseTitle="StubHub payment work"
-  summary="Payment-processing work within a large existing ticketing platform, where a small change has to respect a lot of established behaviour."
+  caseTitle="StubHub — payments and legacy backend work"
+  summary="At Viagogo / StubHub, I worked on backend and payment systems. I found and implemented an unused payment insurance flow in a large legacy codebase, contributing nearly $5M in additional revenue. My work also included payment-provider integrations and moving business logic from SQL Server into backend services."
+  meta={[
+    { label: "Company", value: "Viagogo / StubHub" },
+    { label: "Role", value: "Senior Software Engineer" },
+    { label: "Period", value: "September 2022–December 2023" }
+  ]}
+  factsHeading="Role context"
   facts={[
-    { label: "Focus", value: "Payment-processing work" },
-    { label: "Context", value: "An established ticketing platform" },
-    { label: "Contribution", value: "Engineering work within a wider system and team" }
+    { label: "Primary area", value: "Backend and payment systems" },
+    { label: "Platform context", value: "A large legacy codebase" },
+    { label: "Team support", value: "Mentored 3 junior developers" }
   ]}
 >
-  <h2>Context</h2>
-  <p>I contributed payment-processing work within an established ticketing platform. It was a useful example of engineering inside a mature system, where the value comes from fitting a change into behaviour that many other teams and customers already rely on.</p>
+  <h2>Working in an existing payment system</h2>
+  <p>I worked on backend and payment systems inside a large, established codebase. The value of a change in that setting comes from understanding the behaviour that customers and adjacent teams already rely on, then fitting the improvement into that wider system.</p>
+  <p>The work called for focused changes rather than treating the platform as a blank slate. Existing system boundaries, payment flows and the people responsible for neighbouring areas all shaped the engineering approach.</p>
 
-  <h2>Working inside an existing system</h2>
-  <p>Payment work is rarely isolated. A change needs to fit with existing flows, operational expectations and the people who will investigate an issue later. That makes careful understanding an important part of delivery before implementation begins.</p>
-  <p>Rather than treating the platform as a blank slate, the work meant identifying the narrowest useful change, protecting established behaviour and communicating clearly with the people responsible for adjacent areas.</p>
+  <h2>Finding an unused payment insurance flow</h2>
+  <p>I found and implemented an unused payment insurance flow in the legacy codebase. It was a concrete example of looking for a valuable improvement within existing behaviour, then carrying that work through implementation.</p>
 
-  <h2>My contribution</h2>
-  <ul>
-    <li>Contributed engineering work to payment-related functionality within a larger platform.</li>
-    <li>Worked with existing system boundaries and the dependencies around a mature customer journey.</li>
-    <li>Approached the change as a collaborative contribution rather than sole ownership of the wider result.</li>
-  </ul>
+  <CaseStudyResult
+    label="Commercial contribution"
+    value="Contributed nearly $5M in additional revenue through a payment insurance flow."
+    detail="This describes my contribution through that flow, within a wider product and team."
+  />
+
+  <h2>Payment-provider integrations and updates</h2>
+  <p>I built payment-provider integrations using .NET Web API and gRPC, alongside an automated payment method update platform. The work focused on payment-related functionality within a wider system, with the care that established customer journeys require.</p>
+
+  <h2>Moving business logic out of SQL Server</h2>
+  <p>Part of my work was moving business logic out of legacy SQL Server code and into backend services. That was a practical way to improve where the logic lived while respecting the surrounding system rather than claiming a complete platform rewrite.</p>
+
+  <h2>Supporting the team</h2>
+  <p>Alongside the payment and backend work, I mentored three junior developers. It was part of contributing to the team around the system as well as to the code itself.</p>
 
   <aside class="article-callout">
     <p><strong>Clear attribution matters.</strong> This page describes the part of the work I contributed. It does not claim sole credit for the platform, team or its business outcomes.</p>
   </aside>
 
-  <h2>What this illustrates</h2>
-  <p>Experienced engineering in an established system is often about judgement: learning the constraints, selecting a careful change and leaving the software easier for the next person to work with.</p>
+  <section class="case-technologies" aria-labelledby="stubhub-technologies">
+    <h2 id="stubhub-technologies">Confirmed technology scope</h2>
+    <ul class="tag-list" aria-label="Viagogo and StubHub technologies">
+      <li>.NET Web API</li>
+      <li>gRPC</li>
+      <li>SQL Server</li>
+    </ul>
+  </section>
 
   <nav class="article-nav" aria-label="Case study navigation">
     <a class="text-link" href="/work/illuvium/">Back to Illuvium</a>
-    <a class="text-link" href="/#contact">Discuss existing-system work</a>
+    <a class="text-link" href="/#contact">Need help with payment integrations or a legacy backend?</a>
   </nav>
 </CaseStudyLayout>

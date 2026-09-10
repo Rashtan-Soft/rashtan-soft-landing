@@ -2,6 +2,12 @@
 interface Fact {
   label: string;
   value: string;
+  note?: string;
+}
+
+interface Meta {
+  label: string;
+  value: string;
 }
 
 interface Props {
@@ -9,9 +15,11 @@ interface Props {
   title: string;
   summary: string;
   facts: Fact[];
+  factsHeading?: string;
+  meta?: Meta[];
 }
 
-const { eyebrow, title, summary, facts } = Astro.props;
+const { eyebrow, title, summary, facts, factsHeading, meta = [] } = Astro.props;
 ---
 
 <section class="page-hero" aria-labelledby="case-title">
@@ -20,14 +28,28 @@ const { eyebrow, title, summary, facts } = Astro.props;
       <p class="eyebrow">{eyebrow}</p>
       <h1 id="case-title">{title}</h1>
       <p class="page-hero__summary">{summary}</p>
+      {meta.length > 0 && (
+        <dl class="case-meta">
+          {meta.map((item) => (
+            <div>
+              <dt>{item.label}</dt>
+              <dd>{item.value}</dd>
+            </div>
+          ))}
+        </dl>
+      )}
     </div>
-    <dl class="fact-list">
-      {facts.map((fact) => (
-        <div>
-          <dt>{fact.label}</dt>
-          <dd>{fact.value}</dd>
-        </div>
-      ))}
-    </dl>
+    <div class="fact-list-wrap">
+      {factsHeading && <p class="fact-list__title">{factsHeading}</p>}
+      <dl class="fact-list">
+        {facts.map((fact) => (
+          <div>
+            <dt>{fact.label}</dt>
+            <dd>{fact.value}</dd>
+            {fact.note && <p class="fact-list__note">{fact.note}</p>}
+          </div>
+        ))}
+      </dl>
+    </div>
   </div>
 </section>
